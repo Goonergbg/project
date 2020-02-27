@@ -51,8 +51,7 @@
 
 <script>
 import Compare from "./components/Compare.vue";
-import headercontent from "./components/header.vue";
-
+import headercontent from "./components/headercontent.vue";
 import News from "./components/News.vue";
 
 export default {

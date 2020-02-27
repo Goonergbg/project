@@ -64,7 +64,7 @@
 }
 
 header {
-  background-image: url("greyback.jpg");
+  /* background-image: url("greyback.jpg"); */
   height: 650px;
 }
 
