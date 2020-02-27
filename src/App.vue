@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
       <div class="logo">
         <h2>Logo</h2>
       </div>
@@ -68,11 +68,6 @@ export default {
   width: 130px;
   height: 100px;
   background-color: darkgrey;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
 }
 
 .navbar-nav {
