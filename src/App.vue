@@ -35,7 +35,7 @@
         </ul>
       </div>
     </nav>
-
+    <router-view />
     <headercontent class="headercontainer" />
     <Compare />
 
@@ -45,15 +45,15 @@
 
 <script>
 import Compare from "./components/Compare.vue";
-import headercontent from "./components/headercontent.vue";
-import News from "./components/News.vue";
+// import headercontent from "./components/headercontent.vue";
+// import News from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    Compare,
-    headercontent,
-    News
+    Compare
+    // headercontent,
+    // News
   }
 };
 </script>

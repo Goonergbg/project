@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import headercontent from '../components/headercontent'
+import Home from '../views/Home'
 
 Vue.use(VueRouter)
 
@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'headercontent',
-    component: headercontent
+    component: Home
   }]
 
 const router = new VueRouter({
