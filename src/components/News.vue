@@ -1,15 +1,13 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-8">
-          <img src="assets/logo.png" />Column
-        </div>
-        <div class="col">Column</div>
-        <div class="w-100"></div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-8">
+        <img src="assets/logo.png" />Column
       </div>
+      <div class="col m-3">Column</div>
+      <div class="w-100"></div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
     </div>
   </div>
 </template>
