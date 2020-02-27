@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="logo">
         <h2>Logo</h2>
