@@ -20,14 +20,14 @@
         <router-link to="/compare-players">
           <button
             class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-          >Button</button>
+          >Compare players</button>
         </router-link>
       </div>
 
       <div id="big-button2">
         <button
           class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-        >Button</button>
+        >Compare teams</button>
       </div>
     </div>
   </header>
@@ -56,13 +56,15 @@
 
 #big-button1 {
   height: 40px;
-  margin-left: 15%;
+  margin-right: 30%;
   padding-top: 5%;
+  font-size: 22px;
 }
 
 #big-button2 {
   height: 65px;
-  margin-left: 55%;
+  margin-left: 60%;
+  font-size: 22px;
 }
 
 header {
