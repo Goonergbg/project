@@ -36,7 +36,6 @@
       </div>
     </nav>
     <router-view />
-    <headercontent class="headercontainer" />
     <Compare />
 
     <i onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-arrow-up"></i>
