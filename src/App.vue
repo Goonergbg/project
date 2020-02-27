@@ -4,7 +4,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-      <News class="newstitle" />
+      <!-- <News class="newstitle" /> -->
     </div>
     <router-view />
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,22 +44,20 @@
     </nav>
 
     <Compare />
-
-    <headercontent class="headercontainer" />
   </div>
 </template>
 
 <script>
 import Compare from "./components/Compare.vue";
-import headercontent from "./components/headercontent.vue";
-import News from "./components/News.vue";
+// import headercontent from "./components/headercontent.vue";
+// import News from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    Compare,
-    headercontent,
-    News
+    Compare
+    // headercontent,
+    // News
   }
 };
 </script>
