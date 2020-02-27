@@ -44,17 +44,22 @@
     </nav>
 
     <Compare />
+
+    <headercontent class="headercontainer" />
   </div>
 </template>
 
 <script>
-import News from "./components/News.vue";
 import Compare from "./components/Compare.vue";
+import headercontent from "./components/header.vue";
+
+import News from "./components/News.vue";
 
 export default {
   name: "App",
   components: {
     Compare,
+    headercontent,
     News
   }
 };
