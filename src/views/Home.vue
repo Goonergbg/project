@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <News class="newstitle" />
     <headercontent class="headercontainer" />
+    <News class="newstitle" />
   </div>
 </template>
 
