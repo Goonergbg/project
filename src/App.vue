@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
     Hej
     <div id="nav">
       <router-link to="/">Home</router-link>|
@@ -8,7 +7,6 @@
       <News class="newstitle" />
     </div>
     <router-view />
-=======
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="logo">
         <h2>Logo</h2>
@@ -46,31 +44,22 @@
     </nav>
 
     <Compare />
->>>>>>> bb16a7f66a4a0852131e5e6af6b83fe16179fd35
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import News from "./components/News.vue";
-
-export default {
-  name: "Home",
-  components: {
-    News
-=======
 import Compare from "./components/Compare.vue";
 
 export default {
   name: "App",
   components: {
-    Compare
->>>>>>> bb16a7f66a4a0852131e5e6af6b83fe16179fd35
+    Compare,
+    News
   }
 };
 </script>
 
-<<<<<<< HEAD
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -91,8 +80,8 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-=======
-<style scoped>
+}
+
 .logo {
   display: flex;
   justify-content: center;
@@ -112,6 +101,5 @@ export default {
 
 .navbar-nav {
   margin-left: 250px;
->>>>>>> bb16a7f66a4a0852131e5e6af6b83fe16179fd35
 }
 </style>
