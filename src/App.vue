@@ -1,12 +1,5 @@
 <template>
-  <div id="app">
-    Hej
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-      <!-- <News class="newstitle" /> -->
-    </div>
-    <router-view />
+  <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="logo">
         <h2>Logo</h2>
@@ -42,7 +35,7 @@
         </ul>
       </div>
     </nav>
-
+    <router-view />
     <headercontent class="headercontainer" />
     <Compare />
 
