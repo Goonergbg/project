@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <Compare />
+
+    <headercontent class="headercontainer" />
   </div>
 </template>
 
 <script>
-import Compare from './components/Compare.vue'
+import Compare from "./components/Compare.vue";
+import headercontent from "./components/header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Compare
+    Compare,
+    headercontent
   }
-}
+};
 </script>
 
 <style>
