@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
       <div class="logo">
         <h2>Logo</h2>
       </div>
