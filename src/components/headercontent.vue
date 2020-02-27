@@ -20,14 +20,16 @@
         <router-link to="/compare-players">
           <button
             class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-          >Compare players</button>
+          >Compare Players</button>
         </router-link>
       </div>
 
       <div id="big-button2">
+        <router-link to="/compare-teams">
         <button
           class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-        >Compare teams</button>
+        >Compare Teams</button>
+        </router-link>
       </div>
     </div>
   </header>
