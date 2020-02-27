@@ -17,9 +17,11 @@
 
     <div class="container mx-auto">
       <div id="big-button1">
-        <button
-          class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-        >Button</button>
+        <router-link to="/compare-players">
+          <button
+            class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
+          >Button</button>
+        </router-link>
       </div>
 
       <div id="big-button2">
