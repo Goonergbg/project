@@ -10,7 +10,7 @@
 
 <br>
 <br>
-<input type="submit" value="Jämför Lagen" class="input">
+<input type="button" class="input" value="Jämför Lagen">
       </div>
 </template>
 
