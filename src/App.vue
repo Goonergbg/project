@@ -27,7 +27,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Compare teams</a>
+            <a class="nav-link"><router-link to="/compare-teams">Compare teams</router-link></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Compare players</a>
