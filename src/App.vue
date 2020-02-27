@@ -35,12 +35,19 @@
         </ul>
       </div>
     </nav>
+
+    <Compare />
   </div>
 </template>
 
 <script>
+import Compare from "./components/Compare.vue";
+
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    Compare
+  }
 };
 </script>
 
