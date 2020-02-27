@@ -58,19 +58,20 @@
 
 #big-button1 {
   height: 40px;
-  margin-right: 30%;
+  margin-right: 50%;
   padding-top: 5%;
   font-size: 22px;
 }
 
 #big-button2 {
-  height: 65px;
-  margin-left: 60%;
+  height: 40px;
+  margin-left: 45%;
   font-size: 22px;
 }
 
 header {
-  /* background-image: url("greyback.jpg"); */
+  /* background-image: url("/.public/greyback.jpg"); */
+  background-color: grey;
   height: 650px;
 }
 
@@ -79,7 +80,7 @@ header {
 }
 
 .headercontainer {
-  padding-top: 100px;
+  padding-top: 60px;
   text-align: center;
 }
 </style>
