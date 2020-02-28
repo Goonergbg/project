@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <router-link to="/" class="nav-link">Compare teams</router-link>
+            <router-link to="/" class="nav-link">Home</router-link>
             <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
@@ -36,10 +36,10 @@
       </div>
     </nav>
     <router-view />
-    <!-- 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
+
+    <button @click="topFunction" title="Go to top" :style="display" class="myBtn">
       <i class="fas fa-arrow-up"></i>
-    </button>-->
+    </button>
 
     <footer class="site-footer">
       <div class="container">
@@ -103,6 +103,37 @@ export default {
     //Compare
     // headercontent,
     // News
+  },
+
+  data() {
+    return {
+      display: "display: none"
+    };
+  },
+
+  methods: {
+    scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        this.display = "display: block";
+      } else {
+        this.display = "display: none";
+      }
+    },
+    // When the user clicks on the button, scroll to the top of the document
+    topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  },
+
+  created() {
+    window.addEventListener("scroll", this.scrollFunction);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.scrollFunction);
   }
 };
 </script>
@@ -125,6 +156,26 @@ export default {
 
 .nav-item {
   margin-right: 10px;
+}
+
+.myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(216, 216, 216, 0.5);
+  color: white;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.myBtn:hover {
+  background-color: rgba(160, 160, 160, 0.5);
 }
 
 .site-footer {
