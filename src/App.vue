@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="App">
     <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
       <div class="logo">
-        <h2>Logo</h2>
+        <img src="logo.png" alt="Logo">
       </div>
 
       <span class="navbar-brand"></span>
@@ -42,7 +42,45 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="fas fa-arrow-up"></i>
     </button>
-  </div>
+
+
+
+   <footer class="site-footer">
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-12 col-md-6">
+                   <h6>About</h6>
+                   <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ut id corporis pariatur ipsum magni quos expedita dolore, cupiditate delectus sit labore dolor est eveniet distinctio nesciunt perferendis, magnam quibusdam.</p>
+               </div>
+
+               <div class="col-xs-6 col-md-3">
+                   <h6>Our Team</h6>
+                   <ul class="links">
+                       <li><a href="#">Anuraj</a></li>
+                       <li><a href="#">Enes</a></li>
+                       <li><a href="#">Eliza</a></li>
+                       <li><a href="#">Elin</a></li>
+                       <li><a href="#">Johan</a></li>
+                       <li><a href="#">Tilda</a></li>
+                   </ul>
+               </div>
+
+               <div class="col-xs-6 col-md-3">
+                   <img src="logo.png" alt="Football">
+               </div>
+           </div>
+           <hr>
+       </div>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-8 col-sm-6 col-xs-12">
+                   <p class="copyright-text">Copyright &copy; 2020 Football Comparison</p>
+               </div>
+           </div>
+       </div>
+   </footer>
+
+     </div>
 </template>
 
 <script>
@@ -60,26 +98,26 @@ export default {
 };
 
 //Get the button:
-mybutton = document.getElementById("myBtn");
+// mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {
-  scrollFunction();
-};
+// window.onscroll = function() {
+  // scrollFunction();
+// };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
+// function scrollFunction() {
+  // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    // mybutton.style.display = "block";
+  // } else {
+    // mybutton.style.display = "none";
+  // }
+// }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+// function topFunction() {
+  // document.body.scrollTop = 0; // For Safari
+  // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// }
 </script>
 
 <style>
@@ -90,9 +128,8 @@ function topFunction() {
   position: absolute;
   top: 0;
   left: 80px;
-  width: 130px;
-  height: 100px;
-  background-color: darkgrey;
+  width: 200px;
+  height: 200px;
 }
 
 .navbar-nav {
@@ -140,4 +177,78 @@ function topFunction() {
 .fas {
   padding: 15px;
 }
+
+
+.site-footer {
+    background-color: #e83e8c;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.site-footer hr {
+    border-top-color: #fff;
+    opacity: 0.5
+}
+
+.site-footer hr.small {
+    margin: 20px 0
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+.site-footer a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.links {
+    padding-left: 0;
+    list-style: none
+}
+
+.links li {
+    display: block
+}
+
+.links a {
+    color: #fff
+}
+
+.links a:active,
+.links a:focus,
+.links a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.links.inline li {
+    display: inline-block
+}
+
+
+.site-footer .copyright-text {
+    margin: 0;
+}
+
+
+
+@media (max-width:767px) {
+
+    .site-footer .copyright-text {
+        text-align: center
+    }
+}
+
 </style>
