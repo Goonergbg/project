@@ -1,5 +1,5 @@
 <template>
-      <div>
+      <div class="main">
       <select class="input">
        <option value="ManUtd">Manchester United</option>
 </select>
@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  min-height: 60vh;
+}
 .button-compare {
   margin-top: 10px;
   width: 20%;
@@ -29,22 +32,22 @@ export default {
   height: 40px;
   border: 1px solid #CCC;
   padding-left: 10px;
-  background: #222;
-  color: #FFF;
-  border-bottom: solid 4px #FFA500;
+  background: #fff;
+  color: #000;
+  border-bottom: solid 4px #e83e8c;
   border-radius: 3px;
 }
 .input {
-  margin-top: 120px;
+  margin-top: 150px;
   width: 20%;
   margin-right: 20px;
   font-size: 20px;
   height: 40px;
   border: 1px solid #CCC;
   padding-left: 10px;
-  background: #222;
-  color: #FFF;
-  border-bottom: solid 4px #FFA500;
+  background: #fff;
+  color: #000;
+  border-bottom: solid 4px #e83e8c;
   border-radius: 3px;
 }
 </style>
