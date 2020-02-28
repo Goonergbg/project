@@ -27,7 +27,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Compare teams</a>
+            <a class="nav-link"><router-link to="/compare-teams">Compare teams</router-link></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Compare players</a>
@@ -36,21 +36,21 @@
       </div>
     </nav>
     <router-view />
-    <Compare />
+    
 
     <i onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-arrow-up"></i>
   </div>
 </template>
 
 <script>
-import Compare from "./components/Compare.vue";
+//import Compare from "./components/Compare.vue";
 // import headercontent from "./components/headercontent.vue";
 // import News from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    Compare
+    //Compare
     // headercontent,
     // News
   }
