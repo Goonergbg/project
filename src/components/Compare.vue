@@ -32,9 +32,9 @@ export default {
   height: 40px;
   border: 1px solid #CCC;
   padding-left: 10px;
-  background: #222;
-  color: #FFF;
-  border-bottom: solid 4px #FFA500;
+  background: #fff;
+  color: #000;
+  border-bottom: solid 4px #e83e8c;
   border-radius: 3px;
 }
 .input {
@@ -45,9 +45,9 @@ export default {
   height: 40px;
   border: 1px solid #CCC;
   padding-left: 10px;
-  background: #222;
-  color: #FFF;
-  border-bottom: solid 4px #FFA500;
+  background: #fff;
+  color: #000;
+  border-bottom: solid 4px #e83e8c;
   border-radius: 3px;
 }
 </style>
