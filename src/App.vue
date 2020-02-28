@@ -55,22 +55,22 @@
             <h6>Our Team</h6>
             <ul class="links">
               <li>
-                <a href="#">Anuraj</a>
+                <a href="https://www.linkedin.com/in/anuraj-sandhu-44539787/" target="_blank">Anuraj</a>
               </li>
               <li>
-                <a href="#">Enes</a>
+                <a href="https://se.linkedin.com/in/enes-gashi-5082b9132" target="_blank">Enes</a>
               </li>
               <li>
-                <a href="#">Eliza</a>
+                <a href="https://www.linkedin.com/in/eliza-albert-8a13b319b" target="_blank">Eliza</a>
               </li>
               <li>
-                <a href="#">Elin</a>
+                <a href="https://www.linkedin.com/in/elin-alsterbo/" target="_blank">Elin</a>
               </li>
               <li>
-                <a href="#">Johan</a>
+                <a href="https://www.linkedin.com/in/johan-%C3%B6stby-0650781a3/" target="_blank">Johan</a>
               </li>
               <li>
-                <a href="#">Tilda</a>
+                <a href="https://www.linkedin.com/in/tilda-sandqvist-8b6224129/" target="_blank">Tilda</a>
               </li>
             </ul>
           </div>
