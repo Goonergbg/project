@@ -21,10 +21,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home
-              <span class="sr-only">(current)</span>
-            </a>
+            <router-link to="/" class="nav-link">Compare teams</router-link>
+            <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
             <a class="nav-link">
@@ -38,8 +36,8 @@
       </div>
     </nav>
     <router-view />
-
-    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <!-- 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="fas fa-arrow-up"></i>
     </button>-->
 
