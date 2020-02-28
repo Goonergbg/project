@@ -27,7 +27,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"><router-link to="/compare-teams">Compare teams</router-link></a>
+            <a class="nav-link">
+              <router-link to="/compare-teams">Compare teams</router-link>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Compare players</a>
@@ -36,9 +38,10 @@
       </div>
     </nav>
     <router-view />
-    
 
-    <i onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-arrow-up"></i>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </div>
 </template>
 
@@ -55,6 +58,28 @@ export default {
     // News
   }
 };
+
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 </script>
 
 <style>
@@ -93,22 +118,26 @@ export default {
   /* Remove borders */
   outline: none;
   /* Remove outline */
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.5);
   /* Set a background color */
   color: white;
   /* Text color */
   cursor: pointer;
   /* Add a mouse pointer on hover */
-  padding: 10px;
+  padding: 0;
   /* Some padding */
-  border-radius: 10px;
+  border-radius: 50%;
   /* Rounded corners */
   font-size: 18px;
   /* Increase font size */
 }
 
 #myBtn:hover {
-  background-color: #555;
+  background-color: rgba(169, 169, 169, 0.5);
   /* Add a dark-grey background on hover */
+}
+
+.fas {
+  padding: 15px;
 }
 </style>
