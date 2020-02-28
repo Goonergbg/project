@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
       <div class="logo">
         <h2>Logo</h2>
       </div>
 
-      <span id="logo" class="navbar-brand"></span>
+      <span class="navbar-brand"></span>
       <!--För att hamburger-menyn ska hamna till höger vid mindre skärm-->
       <button
         class="navbar-toggler"
@@ -72,6 +72,10 @@ export default {
 
 .navbar-nav {
   margin-left: 250px;
+}
+
+.nav-item {
+  margin-right: 10px;
 }
 
 #myBtn {
