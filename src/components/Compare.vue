@@ -10,7 +10,7 @@
 
 <br>
 <br>
-<input type="button" class="input" value="Jämför Lagen">
+<input type="button" class="button-compare" value="Jämför Lagen">
       </div>
 </template>
 
@@ -21,7 +21,21 @@ export default {
 </script>
 
 <style scoped>
+.button-compare {
+  margin-top: 10px;
+  width: 20%;
+  margin-right: 20px;
+  font-size: 20px;
+  height: 40px;
+  border: 1px solid #CCC;
+  padding-left: 10px;
+  background: #222;
+  color: #FFF;
+  border-bottom: solid 4px #FFA500;
+  border-radius: 3px;
+}
 .input {
+  margin-top: 120px;
   width: 20%;
   margin-right: 20px;
   font-size: 20px;
