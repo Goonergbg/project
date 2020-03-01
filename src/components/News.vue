@@ -6,7 +6,7 @@
         <h2 class="arttitlebig">Titel</h2>
         <p
           class="arttextbig"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.y</p>
+        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at ut quaerat est rem vel non magnam blanditiis dolore ullam pariatur quidem facilis assumenda perspiciatis, temporibus officia eaque ea tenetur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus at unde quaerat itaque quam ipsa saepe dolorum soluta quasi? Distinctio facere minus aperiam laudantium laboriosam atque voluptas, molestias qui tempora!</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
@@ -38,6 +38,21 @@
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo sunt esse nulla dolorum pariatur.</p>
       </div>
+      <div class="w-100"></div>
+      <div class="col m-3">
+        <img src="artiklarbild.jpg" class="artbild" />
+        <h2 class="arttitle">Titel</h2>
+        <p
+          class="arttext"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col m-3">
+        <img src="artiklarbild.jpg" class="artbild" />
+        <h2 class="arttitle">Titel</h2>
+        <p
+          class="arttext"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -53,10 +68,15 @@ export default {
 
 <style scoped>
 /* Kolumner och deras innehåll:  */
+.row {
+  margin-top: -6em;
+  margin-bottom: 3em;
+}
 .col {
-  background-color: green;
+  background-color: rgb(255, 255, 255);
   height: auto; /* GÖR DENNA TILL AUTO SEN */
   float: right;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.103);
 }
 .artbild {
   margin-top: 20px;
@@ -65,16 +85,22 @@ export default {
   width: 200px;
   height: 170px;
   margin-right: 15px;
+  box-shadow: 0 0 10px 5px rgba(5, 2, 2, 0.13);
+  border-radius: 2px;
 }
 .arttext {
   margin-top: 15px;
   margin-bottom: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 .arttitle {
   margin-top: 15px;
   margin-bottom: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 
 /* TOP NYHETEN */
@@ -85,17 +111,23 @@ export default {
   width: 350px;
   height: 270px;
   margin-right: 15px;
+  box-shadow: 0 0 10px 5px rgba(5, 2, 2, 0.13);
+  border-radius: 2px;
 }
 .arttextbig {
   margin-top: 15px;
   margin-bottom: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 20px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 .arttitlebig {
   margin-top: 15px;
   margin-bottom: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 45px;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 </style>
