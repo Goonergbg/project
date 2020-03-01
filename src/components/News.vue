@@ -103,11 +103,12 @@ export default {
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 .arttitle {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+  font-size: 25px;
 }
 
 /* TOP NYHETEN */
@@ -122,16 +123,15 @@ export default {
   border-radius: 2px;
 }
 .arttextbig {
-  margin-top: 15px;
   margin-bottom: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
 }
 .arttitlebig {
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 40px;
   color: rgba(0, 0, 0, 0.842);
@@ -140,5 +140,7 @@ export default {
 .artauthor {
   float: right;
   margin-top: 10px;
+  font-size: 17px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 </style>
