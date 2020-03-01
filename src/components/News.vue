@@ -7,6 +7,7 @@
         <p
           class="arttextbig"
         >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at ut quaerat est rem vel non magnam blanditiis dolore ullam pariatur quidem facilis assumenda perspiciatis, temporibus officia eaque ea tenetur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus at unde quaerat itaque quam ipsa saepe dolorum soluta quasi? Distinctio facere minus aperiam laudantium laboriosam atque voluptas, molestias qui tempora!</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
@@ -15,6 +16,7 @@
         <p
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.y</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="col m-3">
         <img src="artiklarbild.jpg" class="artbild" />
@@ -22,6 +24,7 @@
         <p
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
@@ -30,13 +33,15 @@
         <p
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="col m-3">
         <img src="artiklarbild.jpg" class="artbild" />
         <h2 class="arttitle">Titel</h2>
         <p
           class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo sunt esse nulla dolorum pariatur.</p>
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
@@ -45,6 +50,7 @@
         <p
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="artauthor">Author</p>
       </div>
       <div class="col m-3">
         <img src="artiklarbild.jpg" class="artbild" />
@@ -52,6 +58,7 @@
         <p
           class="arttext"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="artauthor">Author</p>
       </div>
     </div>
   </div>
@@ -79,10 +86,10 @@ export default {
   box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.103);
 }
 .artbild {
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 20px;
   float: left;
-  width: 200px;
+  width: 220px;
   height: 170px;
   margin-right: 15px;
   box-shadow: 0 0 10px 5px rgba(5, 2, 2, 0.13);
@@ -129,5 +136,9 @@ export default {
   font-size: 40px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+}
+.artauthor {
+  float: right;
+  margin-top: 10px;
 }
 </style>
