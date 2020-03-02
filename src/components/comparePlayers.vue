@@ -10,3 +10,9 @@
   background-color: #fff;
 }
 </style>
+
+<script>
+export default {
+  name: "comparePlayers"
+};
+</script>
