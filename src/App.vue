@@ -20,19 +20,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
-            <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
-              <router-link to="/compare-teams">Compare teams</router-link>
-            </a>
+            <router-link to="/compare-teams" class="nav-link">Compare teams</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
-              <router-link to="/comparePlayers">Compare players</router-link>
-            </a>
+            <router-link to="/comparePlayers" class="nav-link">Compare players</router-link>
           </li>
         </ul>
       </div>
