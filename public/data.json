@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Manchester United",
+        "ranking": 10,
+        "stadium": "Old Trafford",
+        "found": "1878",
+        "country": "England",
+        "url": "https://www.logofootball.net/wp-content/uploads/Manchester-United-FC-HD-Logo.png"
+    },
+    {
+        "id": 2,
+        "name": "Chelsea",
+        "ranking": 14,
+        "stadium": "Stamford Bridge",
+        "found": "1905",
+        "country": "England",
+        "url": "https://seeklogo.com/images/C/chelsea-f-c-logo-C1CB09D36E-seeklogo.com.png"
+    }
+]
