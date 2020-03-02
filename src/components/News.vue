@@ -83,7 +83,7 @@ export default {
   background-color: rgb(255, 255, 255);
   height: auto; /* GÖR DENNA TILL AUTO SEN */
   float: right;
-  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.103);
+  box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.055);
 }
 .artbild {
   margin-top: 25px;
@@ -92,7 +92,7 @@ export default {
   width: 220px;
   height: 170px;
   margin-right: 15px;
-  box-shadow: 1px 2px 10px 5px rgba(5, 2, 2, 0.075);
+  box-shadow: 1px 2px 10px 5px rgba(88, 88, 88, 0.055);
   border-radius: 2px;
 }
 .arttext {
@@ -119,8 +119,7 @@ export default {
   width: 350px;
   height: 270px;
   margin-right: 15px;
-
-  box-shadow: 1px 2px 10px 5px rgba(5, 2, 2, 0.075);
+  box-shadow: 1px 2px 10px 5px rgba(88, 88, 88, 0.055);
   border-radius: 2px;
 }
 .arttextbig {
@@ -128,7 +127,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.11);
 }
 .arttitlebig {
   margin-top: 15px;
