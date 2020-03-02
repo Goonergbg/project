@@ -83,7 +83,7 @@ export default {
   background-color: rgb(255, 255, 255);
   height: auto; /* GÖR DENNA TILL AUTO SEN */
   float: right;
-  box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.055);
+  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.027);
 }
 .artbild {
   margin-top: 25px;
@@ -92,7 +92,7 @@ export default {
   width: 220px;
   height: 170px;
   margin-right: 15px;
-  box-shadow: 1px 2px 10px 5px rgba(88, 88, 88, 0.055);
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068);
   border-radius: 2px;
 }
 .arttext {
@@ -100,14 +100,14 @@ export default {
   margin-bottom: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgb(247, 3, 3);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
 }
 .arttitle {
   margin-top: 20px;
   margin-bottom: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
   font-size: 25px;
 }
 
@@ -119,7 +119,7 @@ export default {
   width: 350px;
   height: 270px;
   margin-right: 15px;
-  box-shadow: 1px 2px 10px 5px rgba(88, 88, 88, 0.055);
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068);
   border-radius: 2px;
 }
 .arttextbig {
@@ -127,7 +127,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.11);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
 }
 .arttitlebig {
   margin-top: 15px;
@@ -135,7 +135,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 40px;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
 }
 .artauthor {
   float: right;
