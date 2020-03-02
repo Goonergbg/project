@@ -10,7 +10,7 @@
 
     <br />
     <br />
-    <router-link to="/results.vue">
+    <router-link to="/results">
       <input type="button" class="button-compare" value="Jämför Lagen" />
     </router-link>
   </div>
