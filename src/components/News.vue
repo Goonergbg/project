@@ -92,7 +92,7 @@ export default {
   width: 220px;
   height: 170px;
   margin-right: 15px;
-  box-shadow: 0 0 10px 5px rgba(5, 2, 2, 0.13);
+  box-shadow: 1px 2px 10px 5px rgba(5, 2, 2, 0.075);
   border-radius: 2px;
 }
 .arttext {
