@@ -30,7 +30,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Compare players</a>
+            <a class="nav-link">
+              <router-link to="/comparePlayers">Compare players</router-link>
+            </a>
           </li>
         </ul>
       </div>
@@ -67,10 +69,16 @@
                 <a href="https://www.linkedin.com/in/elin-alsterbo/" target="_blank">Elin</a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/johan-%C3%B6stby-0650781a3/" target="_blank">Johan</a>
+                <a
+                  href="https://www.linkedin.com/in/johan-%C3%B6stby-0650781a3/"
+                  target="_blank"
+                >Johan</a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/tilda-sandqvist-8b6224129/" target="_blank">Tilda</a>
+                <a
+                  href="https://www.linkedin.com/in/tilda-sandqvist-8b6224129/"
+                  target="_blank"
+                >Tilda</a>
               </li>
             </ul>
           </div>
