@@ -100,7 +100,7 @@ export default {
   margin-bottom: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
-  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.274);
+  text-shadow: 2px 2px 3px rgb(247, 3, 3);
 }
 .arttitle {
   margin-top: 20px;
