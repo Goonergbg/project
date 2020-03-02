@@ -1,23 +1,25 @@
 <template>
-      <div class="main">
-      <select class="input">
-       <option value="ManUtd">Manchester United</option>
-</select>
+  <div class="main">
+    <select class="input">
+      <option value="ManUtd">Manchester United</option>
+    </select>
 
-      <select class="input">
-       <option value="Chelsea">Chelsea</option>
-</select>
+    <select class="input">
+      <option value="Chelsea">Chelsea</option>
+    </select>
 
-<br>
-<br>
-<input type="button" class="button-compare" value="Jämför Lagen">
-      </div>
+    <br />
+    <br />
+    <router-link to="/results.vue">
+      <input type="button" class="button-compare" value="Jämför Lagen" />
+    </router-link>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "Compare"
-}
+  name: "Compare"
+};
 </script>
 
 <style scoped>
@@ -30,7 +32,7 @@ export default {
   margin-right: 20px;
   font-size: 20px;
   height: 40px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   padding-left: 10px;
   background: #fff;
   color: #000;
@@ -43,7 +45,7 @@ export default {
   margin-right: 20px;
   font-size: 20px;
   height: 40px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   padding-left: 10px;
   background: #fff;
   color: #000;
