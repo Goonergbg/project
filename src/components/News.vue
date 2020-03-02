@@ -3,11 +3,9 @@
     <div class="row">
       <div class="col m-3">
         <img src="artiklarbild.jpg" class="artbildbig" />
-        <h2 class="arttitlebig">Titel</h2>
-        <p
-          class="arttextbig"
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos at ut quaerat est rem vel non magnam blanditiis dolore ullam pariatur quidem facilis assumenda perspiciatis, temporibus officia eaque ea tenetur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus at unde quaerat itaque quam ipsa saepe dolorum soluta quasi? Distinctio facere minus aperiam laudantium laboriosam atque voluptas, molestias qui tempora!</p>
-        <p class="artauthor">Author</p>
+        <h2 class="arttitlebig">{{articles[0].title}}</h2>
+        <p class="arttextbig">{{articles[0].content}}</p>
+        <p class="artauthor">{{articles[0].author}}</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
@@ -69,8 +67,31 @@ export default {
   name: "News",
   props: {
     msg: String
+  },
+
+  data() {
+    return {
+      articles: null
+    };
+  },
+  created() {
+    fetch("/data.json")
+      .then(response => response.json())
+      .then(result => {
+        this.articles = result[2].articles;
+        console.log(result[2].articles[0].id);
+      });
   }
 };
+// };
+
+// fetch("/data.json")
+//   .then(response => response.json())
+//   .then(result => {
+//     console.log(result);
+//     // this.articles = result.articles;
+//     console.log(result[2].articles[0].id);
+//   });
 </script>
 
 <style scoped>
@@ -83,7 +104,7 @@ export default {
   background-color: rgb(255, 255, 255);
   height: auto; /* GÖR DENNA TILL AUTO SEN */
   float: right;
-  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.027);
+  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
 }
 .artbild {
   margin-top: 25px;
