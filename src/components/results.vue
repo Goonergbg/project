@@ -1,44 +1,142 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col">1 of 2</div>
-      <div class="col">2 of 2</div>
+  <div class="mainContainer">
+    <div class="table-left">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="heading" scope="col">Team</th>
+            <th scope="col"></th>
+          </tr>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Team-info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="row" style="height: 100px; background-color: rgba(255,0,0,0.1);">
-          <div class="row w-50 h-50" style="background-color: #eee;">1 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">2 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">3 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">4 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">5 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">6 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">7 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">8 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">9 of 10</div>
-          <div class="row w-50 h-50" style="background-color: #eee;">10 of 10</div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="row">
-          <div class="row w-50" style="background-color: #eee;">1 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">2 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">3 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">4 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">5 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">6 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">7 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">8 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">9 of 10</div>
-          <div class="row w-50" style="background-color: #eee;">10 of 10</div>
-        </div>
-      </div>
+    <div class="table-right">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="heading" scope="col">Team</th>
+            <th scope="col"></th>
+          </tr>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Team-info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>Team-info</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <style scoped>
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 600px;
+  margin: 40px auto;
+  padding: 10px;
+  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
+}
+
+.table-left {
+  width: 50%;
+  justify-content: left;
+  margin-right: 150px;
+}
+
+.table-right {
+  width: 50%;
+  justify-content: right;
+}
+
+.heading {
+  text-align: right;
+}
+
+thead th {
+  border-top: none;
+}
 </style>
 
 <script>
