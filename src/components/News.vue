@@ -2,61 +2,49 @@
   <div class="container">
     <div class="row">
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbildbig" />
+        <img :src="articles[0].urlToImage" class="artbildbig" />
         <h2 class="arttitlebig">{{articles[0].title}}</h2>
         <p class="arttextbig">{{articles[0].content}}</p>
         <p class="artauthor">{{articles[0].author}}</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.y</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[1].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[1].title}}</h2>
+        <p class="arttext">{{articles[1].content}}</p>
+        <p class="artauthor">{{articles[1].author}}</p>
       </div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[2].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[2].title}}</h2>
+        <p class="arttext">{{articles[2].content}}</p>
+        <p class="artauthor">{{articles[2].author}}</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[3].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[3].title}}</h2>
+        <p class="arttext">{{articles[3].content}}</p>
+        <p class="artauthor">{{articles[3].author}}</p>
       </div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[4].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[4].title}}</h2>
+        <p class="arttext">{{articles[4].content}}</p>
+        <p class="artauthor">{{articles[4].author}}</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[6].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[6].title}}</h2>
+        <p class="arttext">{{articles[6].content}}</p>
+        <p class="artauthor">{{articles[6].author}}</p>
       </div>
       <div class="col m-3">
-        <img src="artiklarbild.jpg" class="artbild" />
-        <h2 class="arttitle">Titel</h2>
-        <p
-          class="arttext"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, molestias? Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <p class="artauthor">Author</p>
+        <img :src="articles[7].urlToImage" class="artbild" />
+        <h2 class="arttitle">{{articles[7].title}}</h2>
+        <p class="arttext">{{articles[7].content}}</p>
+        <p class="artauthor">{{articles[7].author}}</p>
       </div>
     </div>
   </div>
@@ -110,7 +98,7 @@ export default {
   margin-top: 25px;
   margin-bottom: 20px;
   float: left;
-  width: 220px;
+  width: 240px;
   height: 170px;
   margin-right: 15px;
   box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068);
@@ -122,6 +110,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
+  font-size: 14px;
 }
 .arttitle {
   margin-top: 20px;
@@ -129,7 +118,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /* TOP NYHETEN */
@@ -138,7 +127,7 @@ export default {
   margin-bottom: 20px;
   float: left;
   width: 350px;
-  height: 270px;
+  height: 230px;
   margin-right: 15px;
   box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068);
   border-radius: 2px;

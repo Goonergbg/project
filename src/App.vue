@@ -154,6 +154,10 @@ export default {
   height: 200px;
 }
 
+.navbar {
+  background-color: #fff !important;
+}
+
 .navbar-nav {
   margin-left: 250px;
 }
@@ -184,7 +188,7 @@ export default {
 }
 
 .site-footer {
-  background-color: #e83e8c;
+  background-color: #455a64;
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
