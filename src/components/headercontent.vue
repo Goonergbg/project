@@ -4,13 +4,12 @@
       <div class="container mx-auto">
         <h1 class="headerrubrik">Compare Football Teams and Players</h1>
 
-        <p class="headercontent">
-          We offer the abilty to compare Football teams and players, our website delivers information such as World Ranking, Stadium, Player Goals, Minutes Played, Goals per Match etc...  
-        </p>
+        <p
+          class="headercontent"
+        >We offer the abilty to compare Football teams and players, our website delivers information such as World Ranking, Stadium, Player Goals, Minutes Played, Goals per Match etc...</p>
       </div>
     </div>
 
-    <!-- <div class="container mx-auto"> -->
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
         <router-link to="/compare-players">
@@ -40,11 +39,11 @@
 }
 
 .headerrubrik {
-  font-size: 40px;
+  font-size: 50px;
   color: rgb(255, 255, 255);
-
   font-weight: 800;
   padding-bottom: 30px;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .headercontent {
@@ -55,6 +54,7 @@
 
 button {
   background-color: #ff9900;
+  font-family: "Fira Sans", sans-serif;
 }
 
 button:hover {

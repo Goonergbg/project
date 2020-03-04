@@ -45,7 +45,7 @@
             <h6>About</h6>
             <p
               class="text-justify"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ut id corporis pariatur ipsum magni quos expedita dolore, cupiditate delectus sit labore dolor est eveniet distinctio nesciunt perferendis, magnam quibusdam.</p>
+            >Our company started in February 2020 and have ever since then been comparing football-teams. Visitors, You're Welcome!</p>
           </div>
 
           <div class="col-xs-6 col-md-3">
@@ -158,7 +158,7 @@ export default {
 }
 
 .navbar-nav {
-  margin-left: 250px;
+  margin-left: 300px;
 }
 
 .nav-item {

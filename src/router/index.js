@@ -4,6 +4,7 @@ import Home from '../views/Home'
 import Compare from "../components/Compare.vue"
 import comparePlayers from "../components/comparePlayers.vue"
 import results from "../components/results.vue"
+import resultPlayers from "../components/resultPlayers.vue"
 
 Vue.use(VueRouter)
 
@@ -13,21 +14,25 @@ const routes = [{
     component: Home
   },
   {
+    children: [{
+      path: '/resultPlayers',
+      name: 'resultPlayers',
+      component: resultPlayers
+    }],
     path: '/comparePlayers',
     name: 'comparePlayers',
     component: comparePlayers
   },
   {
-    children: [
-      {
-        path: '/results',
-        name: 'results',
-        component: results
-      }],
+    children: [{
+      path: '/results',
+      name: 'results',
+      component: results
+    }],
     path: '/compare-teams',
     name: 'compare-teams',
     component: Compare
-  }
+  },
 ]
 
 const router = new VueRouter({
