@@ -6,7 +6,7 @@
           <tr>
             <th class="heading" scope="col">{{player.name}}</th>
             <th scope="col">
-              <img src="manchester.png" alt="Logo" />
+              <img src="marcus.png" alt="Logo" class="playerpicure" />
             </th>
           </tr>
           <tr>
@@ -20,7 +20,7 @@
             <td>{{player.goals}}</td>
           </tr>
           <tr>
-            <td> Yellow cards:</td>
+            <td>Yellow cards:</td>
             <td>{{player.yellowCards}}</td>
           </tr>
           <tr>
@@ -41,7 +41,7 @@
           <tr>
             <th class="heading" scope="col">{{player.name}}</th>
             <th scope="col">
-              <img src="chelsea.jpg" alt="Logo" />
+              <img src="olivier.png" alt="Logo" class="playerpicure" />
             </th>
           </tr>
           <tr>
@@ -51,7 +51,7 @@
         </thead>
         <tbody>
           <tr>
-            <td> Goals :</td>
+            <td>Goals :</td>
             <td>{{player.goals}}</td>
           </tr>
           <tr>
@@ -101,6 +101,10 @@
 thead th {
   border-top: none;
 }
+
+.playerpicure {
+  height: 140px;
+}
 </style>
 
 <script>
@@ -115,7 +119,6 @@ export default {
       .then(response => response.json())
       .then(result => {
         (this.players = result[3]), (this.players2 = result[4]);
-        // console.log(result[3].player1)
       });
   },
   data() {
@@ -125,14 +128,6 @@ export default {
     };
   }
 };
-
-
-// .then(response => response.json())
-//       .then(result => {
-//         (this.players = result[3]), (this.players2 = result[1]);
-//         console.log(result[3].player1.goals)
-//       });
-//   },
 </script>
 
 
