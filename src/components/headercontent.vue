@@ -2,22 +2,17 @@
   <header>
     <div class="headercontainer">
       <div class="container mx-auto">
-        <h1 class="headerrubrik">Football Comparison</h1>
+        <h1 class="headerrubrik">Compare Football Teams and Players</h1>
 
-        <p class="headercontent">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi magni,
-          itaque,
-          sequi eligendi architecto quisquam nemo molestias esse, sapiente dolores repell necessitatibus ducimus, ad
-          eius
-          sapiente omnis ratione minima quod ullam dolorem
-          placeat. Aliquid dicta incidunt ab
-        </p>
+        <p
+          class="headercontent"
+        >We offer the abilty to compare Football teams and players, our website delivers information such as World Ranking, Stadium, Player Goals, Minutes Played, Goals per Match etc...</p>
       </div>
     </div>
 
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
-        <router-link to="/compare-players">
+        <router-link to="/comparePlayers">
           <button
             class="h-16 w-64 md:h-20 text-white font-bold py-2 px-4 rounded-full"
           >Compare Players</button>
