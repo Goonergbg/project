@@ -2,7 +2,7 @@
   <header>
     <div class="headercontainer">
       <div class="container mx-auto">
-        <h1 class="headerrubrik">En rubrik</h1>
+        <h1 class="headerrubrik">En rubrik som är en lite rubtik</h1>
 
         <p class="headercontent">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi magni,
@@ -15,7 +15,6 @@
       </div>
     </div>
 
-    <!-- <div class="container mx-auto"> -->
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
         <router-link to="/compare-players">
@@ -45,9 +44,8 @@
 }
 
 .headerrubrik {
-  font-size: 40px;
+  font-size: 50px;
   color: rgb(255, 255, 255);
-
   font-weight: 800;
   padding-bottom: 30px;
 }
@@ -68,7 +66,7 @@
 }
 
 header {
-  background-image: url("/sssss.jpg");
+  background-image: url("/testfotboll.jpg");
   background-color: grey;
   height: 650px;
 }
