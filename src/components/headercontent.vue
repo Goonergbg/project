@@ -15,20 +15,22 @@
       </div>
     </div>
 
-    <div class="container mx-auto">
-      <div id="big-button1">
+    <!-- <div class="container mx-auto"> -->
+    <div class="md:flex md:px-32">
+      <div id="big-button1" class="w-full md:pl-64">
         <router-link to="/compare-players">
           <button
-            class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
+            class="h-16 w-64 md:h-20 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
           >Compare Players</button>
         </router-link>
       </div>
 
-      <div id="big-button2">
+      <div id="big-button2 " class="w-full md:pr-64">
         <router-link to="/compare-teams">
-        <button
-          class="h-20 w-64 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
-        >Compare Teams</button>
+          <button
+            class="h-16 w-64 md:h-20 bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full"
+            id="knappstorlek"
+          >Compare Teams</button>
         </router-link>
       </div>
     </div>
@@ -57,20 +59,16 @@
 }
 
 #big-button1 {
-  height: 40px;
-  margin-right: 50%;
-  padding-top: 5%;
   font-size: 22px;
+  padding-bottom: 16px;
 }
 
-#big-button2 {
-  height: 40px;
-  margin-left: 45%;
+#knappstorlek {
   font-size: 22px;
 }
 
 header {
-  /* background-image: url("/.public/greyback.jpg"); */
+  background-image: url("/sssss.jpg");
   background-color: grey;
   height: 650px;
 }
@@ -82,6 +80,21 @@ header {
 .headercontainer {
   padding-top: 60px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .headercontent {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .headerrubrik {
+    font-size: 30px;
+  }
 }
 </style>
 
