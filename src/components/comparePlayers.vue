@@ -11,10 +11,9 @@
 
     <div class="compare-div">
       <router-link to="/resultPlayers">
-        <input type="button" class="button-compare" value="Spelare" />
+        <input type="button" class="button-compare" value="Compare players" />
       </router-link>
     </div>
-
     <router-view></router-view>
   </div>
 </template>
