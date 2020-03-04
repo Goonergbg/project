@@ -38,7 +38,6 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -159,7 +158,7 @@ export default {
 }
 
 .navbar-nav {
-  margin-left: 250px;
+  margin-left: 300px;
 }
 
 .nav-item {
