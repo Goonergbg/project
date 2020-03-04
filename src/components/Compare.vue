@@ -27,11 +27,12 @@ export default {
 
 <style scoped>
 .main {
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px;
+  margin-top: 170px; 
 }
 
 .teams-div {
