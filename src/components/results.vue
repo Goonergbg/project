@@ -94,9 +94,9 @@
   justify-content: right;
 }
 
-/* .heading {
-  text-align: right;
-} */
+.heading {
+  font-size: 19px;
+}
 
 thead th {
   border-top: none;
