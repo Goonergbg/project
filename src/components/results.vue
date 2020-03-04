@@ -5,7 +5,9 @@
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
-            <th scope="col"></th>
+            <th scope="col">
+              <img src="manchester.png" alt="Logo" />
+            </th>
           </tr>
           <tr>
             <th scope="col">Description</th>
@@ -38,7 +40,9 @@
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
-            <th scope="col"></th>
+            <th scope="col">
+              <img src="chelsea.jpg" alt="Logo" />
+            </th>
           </tr>
           <tr>
             <th scope="col">Description</th>
@@ -91,7 +95,7 @@
 }
 
 .heading {
-  text-align: right;
+  font-size: 19px;
 }
 
 thead th {
@@ -102,23 +106,22 @@ thead th {
 <script>
 export default {
   name: "results",
-        created() {
-    fetch('/data.json', {
+  created() {
+    fetch("/data.json", {
       headers: {
-        Accept: 'application/json'
+        Accept: "application/json"
       }
     })
       .then(response => response.json())
       .then(result => {
-        this.stats = result[0],
-        this.stats2 = result[1]
-      })
+        (this.stats = result[0]), (this.stats2 = result[1]);
+      });
   },
   data() {
-      return {
-    stats: null,
-    stats2: null
+    return {
+      stats: null,
+      stats2: null
+    };
   }
-  },
 };
 </script>

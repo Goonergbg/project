@@ -15,43 +15,73 @@
     </router-link>
 <router-view></router-view>
 
+    <div class="teams-div">
+      <select class="input">
+        <option value="ManUtd">Manchester United</option>
+      </select>
+      <select class="input">
+        <option value="Chelsea">Chelsea</option>
+      </select>
+    </div>
 
+    <div class="compare-div">
+      <router-link to="/results">
+        <input type="button" class="button-compare" value="Jämför Lagen" />
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Compare",
-}
+  name: "Compare"
+};
 </script>
 
 <style scoped>
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 60vh;
   
 
 }
-.button-compare {
-  margin-top: 10px;
-  width: 20%;
-  margin-right: 20px;
+
+.teams-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+}
+
+.compare-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+}
+
+.input {
   font-size: 20px;
   height: 40px;
   border: 1px solid #ccc;
+  margin: 20px;
+  width: 30%;
   padding-left: 10px;
   background: #fff;
   color: #000;
   border-bottom: solid 4px #e83e8c;
   border-radius: 3px;
 }
-.input {
-  margin-top: 150px;
-  width: 20%;
-  margin-right: 20px;
+
+.button-compare {
   font-size: 20px;
   height: 40px;
   border: 1px solid #ccc;
-  padding-left: 10px;
+  padding: 0 10px;
+  width: 100%;
   background: #fff;
   color: #000;
   border-bottom: solid 4px #e83e8c;
