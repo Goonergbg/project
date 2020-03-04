@@ -32,7 +32,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px; 
+  margin-top: 50px;
 }
 
 .teams-div {
