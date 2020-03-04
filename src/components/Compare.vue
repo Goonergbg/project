@@ -31,7 +31,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  margin-top: 170px;
 }
 
 .teams-div {
@@ -46,6 +46,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   width: 50%;
+  margin-bottom: 30px;
 }
 
 .input {
