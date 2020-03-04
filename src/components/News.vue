@@ -150,7 +150,7 @@ export default {
 .artauthor {
   float: right;
   margin-top: 10px;
-  font-size: 17px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
+  font-family: "Fira Sans", sans-serif;
 }
 </style>
