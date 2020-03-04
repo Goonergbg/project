@@ -80,7 +80,7 @@ export default {
   font-size: 20px;
   height: 40px;
   border: 1px solid #ccc;
-  padding: 0 30px;
+  padding: 0 10px;
   width: 100%;
   background: #fff;
   color: #000;
