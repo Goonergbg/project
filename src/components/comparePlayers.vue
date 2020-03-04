@@ -1,19 +1,19 @@
 <template>
   <div class="main">
     <div class="teams-div">
-    <select class="input">
-      <option value="ManUtd">Florin Andone</option>
-    </select>
-    <select class="input">
-      <option value="Chelsea">Olivier Giroud</option>
-    </select>
-</div>
+      <select class="input">
+        <option value="ManUtd">Marcus Rashford</option>
+      </select>
+      <select class="input">
+        <option value="Chelsea">Olivier Giroud</option>
+      </select>
+    </div>
 
- <div class="compare-div">
-    <router-link to="/resultPlayers">
-      <input type="button" class="button-compare" value="Spelare" />
-    </router-link>
-     </div>
+    <div class="compare-div">
+      <router-link to="/resultPlayers">
+        <input type="button" class="button-compare" value="Spelare" />
+      </router-link>
+    </div>
 
     <router-view></router-view>
   </div>
@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px; 
+  margin-top: 170px;
 }
 
 .teams-div {
@@ -54,7 +54,7 @@
   padding-left: 10px;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #e83e8c;
+  border-bottom: solid 4px #455a64;
   border-radius: 3px;
 }
 
@@ -66,7 +66,7 @@
   width: 100%;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #e83e8c;
+  border-bottom: solid 4px #455a64;
   border-radius: 3px;
 }
 </style>
