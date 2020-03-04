@@ -88,13 +88,12 @@
     },
     {
         "player1": {
-            "name": "Florin Andone",
-            "goals": "1",
-            "yellowCards": 0,
+            "name": "Marcus Rashford",
+            "goals": "14",
+            "yellowCards": 2,
             "redCards": 0,
-            "minutesPlayed": 72,
-            "goals-per-match": 0.13,
-            "url": "https://resources.premierleague.com/premierleague/photos/players/250x250/p44346.png"
+            "minutesPlayed": 1881,
+            "goalsPerMatch": 0.64
         }
     },
     {
@@ -104,8 +103,7 @@
             "yellowCards": 0,
             "redCards": 1,
             "minutesPlayed": 356,
-            "goals-per-match": 0.33,
-            "url": "https://seeklogo.com/images/C/chelsea-f-c-logo-C1CB09D36E-seeklogo.com.png"
+            "goalsPerMatch": 0.33
         }
     }
 ]
