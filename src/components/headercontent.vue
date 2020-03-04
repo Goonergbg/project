@@ -17,7 +17,7 @@
 
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
-        <router-link to="/compare-players">
+        <router-link to="/comparePlayers">
           <button
             class="h-16 w-64 md:h-20 text-white font-bold py-2 px-4 rounded-full"
           >Compare Players</button>
