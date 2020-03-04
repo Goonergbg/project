@@ -11,7 +11,7 @@
 
     <div class="compare-div">
       <router-link to="/results">
-        <input type="button" class="button-compare" value="Jämför Lagen" />
+        <input type="button" class="button-compare" value="Compare Teams" />
       </router-link>
     </div>
 
