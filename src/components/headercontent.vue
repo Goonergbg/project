@@ -2,7 +2,7 @@
   <header>
     <div class="headercontainer">
       <div class="container mx-auto">
-        <h1 class="headerrubrik">En rubrik</h1>
+        <h1 class="headerrubrik">Compare your favourite Football Teams and Players!</h1>
 
         <p class="headercontent">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi magni,
