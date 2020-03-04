@@ -154,7 +154,7 @@ export default {
   margin-top: 15px;
   margin-bottom: 7px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 40px;
+  font-size: 26px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
 }
