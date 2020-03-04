@@ -15,7 +15,6 @@
       </div>
     </div>
 
-    <!-- <div class="container mx-auto"> -->
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
         <router-link to="/compare-players">
@@ -45,9 +44,8 @@
 }
 
 .headerrubrik {
-  font-size: 40px;
+  font-size: 50px;
   color: rgb(255, 255, 255);
-
   font-weight: 800;
   padding-bottom: 30px;
   font-family: "Chakra Petch", sans-serif;
