@@ -1,5 +1,4 @@
-[
-    {
+[{
         "team1": {
             "name": "Manchester United",
             "ranking": 10,
@@ -20,8 +19,7 @@
         }
     },
     {
-        "articles": [
-            {
+        "articles": [{
                 "id": 3,
                 "title": "Chelsea boss Frank Lampard hails ‘incredible’ Billy Gilmour after Liverpool FA Cup win",
                 "content": "Chelsea progressed to the FA Cup quarter-finals after stunning Liverpool 2-0 on Tuesday night. Billy Gilmour picked up the man of the match award as Chelsea brushed Premier League leaders Liverpool aside at Stamford Bridge and Frank Lampard had nothing but praise for the young midfielder after the game. Lampard had selected a relatively experienced team to take on Jurgen Klopp’s side, with one exception.",
@@ -39,5 +37,27 @@
                 "url": "https://seeklogo.com/images/C/chelsea-f-c-logo-C1CB09D36E-seeklogo.com.png"
             }
         ]
+    },
+
+    {
+        "player1": {
+            "name": "Florin Andone",
+            "goals": "1",
+            "yellowCards": 0,
+            "redCards": 0,
+            "minutesPlayed": 72,
+            "goals-per-match": 0.13,
+            "url": "https://resources.premierleague.com/premierleague/photos/players/250x250/p44346.png"
+        }
+    }, {
+        "player2": {
+            "name": "Olivier Giroud",
+            "goals": 1,
+            "yellowCards": 0,
+            "redCards": 1,
+            "minutesPlayed": 356,
+            "goals-per-match": 0.33,
+            "url": "https://seeklogo.com/images/C/chelsea-f-c-logo-C1CB09D36E-seeklogo.com.png"
+        }
     }
 ]
