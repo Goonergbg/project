@@ -32,7 +32,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px; 
+  margin-top: 100px;
+  margin-top: 170px;
 }
 
 .teams-div {
@@ -59,7 +60,7 @@ export default {
   padding-left: 10px;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #e83e8c;
+  border-bottom: solid 4px #455a64;
   border-radius: 3px;
 }
 
@@ -71,7 +72,7 @@ export default {
   width: 100%;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #e83e8c;
+  border-bottom: solid 4px #455a64;
   border-radius: 3px;
 }
 </style>
