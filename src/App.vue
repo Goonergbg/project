@@ -172,7 +172,8 @@ export default {
   background-color: rgba(216, 216, 216, 0.5);
   color: white;
   cursor: pointer;
-  padding: 7px;
+  padding: 10px;
+  width: 46px;
   border-radius: 50%;
   font-size: 18px;
 }

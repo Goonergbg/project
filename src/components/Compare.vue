@@ -27,11 +27,12 @@ export default {
 
 <style scoped>
 .main {
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px;
+  margin-top: 170px; 
 }
 
 .teams-div {
@@ -66,7 +67,7 @@ export default {
   font-size: 20px;
   height: 40px;
   border: 1px solid #ccc;
-  padding: 0 30px;
+  padding: 0 10px;
   width: 100%;
   background: #fff;
   color: #000;
