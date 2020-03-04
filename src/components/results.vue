@@ -1,10 +1,10 @@
 <template>
   <div class="mainContainer">
     <div class="table-left">
-      <table class="table table-striped">
+      <table class="table table-striped" v-for="stat in stats" :key="stat.id">
         <thead>
           <tr>
-            <th class="heading" scope="col">Team</th>
+            <th class="heading" scope="col">{{stat.name}}</th>
             <th scope="col"></th>
           </tr>
           <tr>
@@ -14,50 +14,30 @@
         </thead>
         <tbody>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>World ranking:</td>
+            <td>{{stat.ranking}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Stadium:</td>
+            <td>{{stat.stadium}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Founded:</td>
+            <td>{{stat.found}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Country:</td>
+            <td>{{stat.country}}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="table-right">
-      <table class="table table-striped">
+      <table class="table table-striped" v-for="stat in stats2" :key="stat.id">
         <thead>
           <tr>
-            <th class="heading" scope="col">Team</th>
+            <th class="heading" scope="col">{{stat.name}}</th>
             <th scope="col"></th>
           </tr>
           <tr>
@@ -67,40 +47,20 @@
         </thead>
         <tbody>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>World ranking:</td>
+            <td>{{stat.ranking}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Stadium:</td>
+            <td>{{stat.stadium}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Founded:</td>
+            <td>{{stat.found}}</td>
           </tr>
           <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>Team-info</td>
+            <td>Country:</td>
+            <td>{{stat.country}}</td>
           </tr>
         </tbody>
       </table>
@@ -141,6 +101,24 @@ thead th {
 
 <script>
 export default {
-  name: "results"
+  name: "results",
+        created() {
+    fetch('/data.json', {
+      headers: {
+        Accept: 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(result => {
+        this.stats = result[0],
+        this.stats2 = result[1]
+      })
+  },
+  data() {
+      return {
+    stats: null,
+    stats2: null
+  }
+  },
 };
 </script>

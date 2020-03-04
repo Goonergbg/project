@@ -13,13 +13,16 @@
     <router-link to="/results">
       <input type="button" class="button-compare" value="Jämför Lagen" />
     </router-link>
+
+
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "Compare"
-};
+  name: "Compare",
+}
 </script>
 
 <style scoped>
