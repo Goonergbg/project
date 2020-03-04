@@ -1,4 +1,5 @@
-[{
+[
+    {
         "team1": {
             "name": "Manchester United",
             "ranking": 10,
@@ -19,7 +20,8 @@
         }
     },
     {
-        "articles": [{
+        "articles": [
+            {
                 "id": 3,
                 "title": "Chelsea boss Frank Lampard hails ‘incredible’ Billy Gilmour after Liverpool FA Cup win",
                 "content": "Chelsea progressed to the FA Cup quarter-finals after stunning Liverpool 2-0 on Tuesday night. \\n? Billy Gilmour picked up the man of the match award as Chelsea brushed Premier League leaders Liverpool aside at Stamford Bridge and Frank Lampard had nothing but praise for the young midfielder after the game. Lampard had selected a relatively experienced team to take on Jurgen Klopp’s side, with one exception.",
@@ -37,7 +39,7 @@
                 "id": 5,
                 "title": "Chelsea player ratings vs Liverpool: Ross Barkley shines as team-mate gets a 9",
                 "author": "Matt Dunn",
-                "content": "Chelsea progressed to the last FA Cup quarter-finals after a 2-0 victory against Premier League leaders Liverpool at Stamford Bridge.",
+                "content": "Chelsea progressed to the last FA Cup quarter-finals after a 2-0 victory.",
                 "urlToImage": "https://cdn.images.express.co.uk/img/dynamic/67/590x/secondary/Ross-Barkley-Liverpool-2344416.webp?r=1583280758311"
             },
             {
@@ -84,7 +86,6 @@
             }
         ]
     },
-
     {
         "player1": {
             "name": "Florin Andone",
@@ -95,7 +96,8 @@
             "goals-per-match": 0.13,
             "url": "https://resources.premierleague.com/premierleague/photos/players/250x250/p44346.png"
         }
-    }, {
+    },
+    {
         "player2": {
             "name": "Olivier Giroud",
             "goals": 1,
