@@ -12,19 +12,19 @@
 
     <div class="md:flex md:px-32">
       <div id="big-button1" class="w-full md:pl-64">
-        <router-link to="/comparePlayers">
+        <router-link to="/compare-teams">
           <button
             class="h-16 w-64 md:h-20 text-white font-bold py-2 px-4 rounded-full"
-          >Compare Players</button>
+          >Compare Teams</button>
         </router-link>
       </div>
 
       <div id="big-button2 " class="w-full md:pr-64">
-        <router-link to="/compare-teams">
+        <router-link to="/comparePlayers">
           <button
             class="h-16 w-64 md:h-20 text-white font-bold py-2 px-4 rounded-full"
             id="knappstorlek"
-          >Compare Teams</button>
+          >Compare Players</button>
         </router-link>
       </div>
     </div>
