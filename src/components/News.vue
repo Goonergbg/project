@@ -107,7 +107,7 @@ export default {
 .arttext {
   margin-top: 15px;
   margin-bottom: 15px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Fira Sans", sans-serif;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
   font-size: 14px;
@@ -115,7 +115,7 @@ export default {
 .arttitle {
   margin-top: 20px;
   margin-bottom: 10px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Fira Sans", sans-serif;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
   font-size: 20px;
@@ -134,7 +134,7 @@ export default {
 }
 .arttextbig {
   margin-bottom: 15px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
@@ -142,7 +142,7 @@ export default {
 .arttitlebig {
   margin-top: 15px;
   margin-bottom: 7px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 26px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
