@@ -15,7 +15,7 @@
         <tbody>
           <tr>
             <td>World ranking:</td>
-            <td>{{stat.ranking}}</td>
+            <td><strong>{{stat.ranking}}</strong></td>
           </tr>
           <tr>
             <td>Stadium:</td>
@@ -48,7 +48,7 @@
         <tbody>
           <tr>
             <td>World ranking:</td>
-            <td>{{stat.ranking}}</td>
+            <td><strong>{{stat.ranking}}</strong></td>
           </tr>
           <tr>
             <td>Stadium:</td>

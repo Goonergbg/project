@@ -13,19 +13,20 @@ const routes = [{
     component: Home
   },
   {
-    path: '/compare-teams',
-    name: 'compare-teams',
-    component: Compare
-  },
-  {
     path: '/comparePlayers',
     name: 'comparePlayers',
     component: comparePlayers
   },
   {
-    path: '/results',
-    name: 'results',
-    component: results
+    children: [
+      {
+        path: '/results',
+        name: 'results',
+        component: results
+      }],
+    path: '/compare-teams',
+    name: 'compare-teams',
+    component: Compare
   }
 ]
 

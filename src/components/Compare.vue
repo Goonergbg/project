@@ -8,12 +8,12 @@
       <option value="Chelsea">Chelsea</option>
     </select>
 
-    <br />
-    <br />
+ <br>
+ <br>
     <router-link to="/results">
       <input type="button" class="button-compare" value="Jämför Lagen" />
     </router-link>
-
+<router-view></router-view>
 
 
   </div>
@@ -28,6 +28,8 @@ export default {
 <style scoped>
 .main {
   min-height: 60vh;
+  
+
 }
 .button-compare {
   margin-top: 10px;
