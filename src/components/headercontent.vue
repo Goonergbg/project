@@ -2,7 +2,7 @@
   <header>
     <div class="headercontainer">
       <div class="container mx-auto">
-        <h1 class="headerrubrik">En rubrik</h1>
+        <h1 class="headerrubrik">Football Comparison</h1>
 
         <p class="headercontent">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi magni,
@@ -50,6 +50,7 @@
 
   font-weight: 800;
   padding-bottom: 30px;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .headercontent {
@@ -60,6 +61,7 @@
 
 button {
   background-color: #ff9900;
+  font-family: "Fira Sans", sans-serif;
 }
 
 button:hover {
