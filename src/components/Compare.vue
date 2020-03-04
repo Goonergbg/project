@@ -1,20 +1,5 @@
 <template>
   <div class="main">
-    <select class="input">
-      <option value="ManUtd">Manchester United</option>
-    </select>
-
-    <select class="input">
-      <option value="Chelsea">Chelsea</option>
-    </select>
-
- <br>
- <br>
-    <router-link to="/results">
-      <input type="button" class="button-compare" value="Jämför Lagen" />
-    </router-link>
-<router-view></router-view>
-
     <div class="teams-div">
       <select class="input">
         <option value="ManUtd">Manchester United</option>
@@ -29,6 +14,8 @@
         <input type="button" class="button-compare" value="Jämför Lagen" />
       </router-link>
     </div>
+
+    <router-view></router-view>
   </div>
 </template>
 
@@ -44,9 +31,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
-  
-
+  margin-top: 170px;
 }
 
 .teams-div {
@@ -61,6 +46,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   width: 50%;
+  margin-bottom: 30px;
 }
 
 .input {
