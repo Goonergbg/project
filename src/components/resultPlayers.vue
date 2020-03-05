@@ -46,7 +46,7 @@
           </tr>
           <tr>
             <th scope="col">Description</th>
-            <th scope="col">Team-info</th>
+            <th scope="col">Player-info</th>
           </tr>
         </thead>
         <tbody>
