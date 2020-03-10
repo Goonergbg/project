@@ -2,6 +2,7 @@ const express = require('express')
 const sqlite = require('sqlite')
 
 const app = express()
+app.use(express.json())
 
 let database
 
@@ -10,8 +11,8 @@ sqlite.open('databas.sqlite').then(database_ => {
 })
 
 app.get('/', (request, response) => {
-    database.all('SELECT * FROM cities').then(cities => {
-        response.send(cities)
+    database.all('SELECT * FROM Table').then(test => {
+        response.send(test)
     })
 })
 
