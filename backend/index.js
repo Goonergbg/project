@@ -11,7 +11,7 @@ sqlite.open('databas.sqlite').then(database_ => {
 })
 
 app.get('/', (request, response) => {
-    database.all('SELECT * FROM test_table').then(test => {
+    database.all('SELECT * FROM teams_table').then(test => {
         response.send(test)
     })
 })
