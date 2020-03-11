@@ -5,6 +5,7 @@ import Compare from "../components/Compare.vue"
 import comparePlayers from "../components/comparePlayers.vue"
 import results from "../components/results.vue"
 import resultPlayers from "../components/resultPlayers.vue"
+import forum from "../components/forum.vue"
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [{
     path: '/compare-teams',
     name: 'compare-teams',
     component: Compare
+  },
+  {
+    path: '/forum',
+    name: 'forum',
+    component: forum
   },
 ]
 
