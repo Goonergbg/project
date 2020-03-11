@@ -171,7 +171,8 @@ export default {
 
   data() {
     return {
-      articles: null
+      articles: null,
+      livescore: null
     };
   },
   created() {
@@ -180,6 +181,12 @@ export default {
       .then(result => {
         this.articles = result[2].articles;
         console.log(result[2].articles[0].id);
+      });
+    fetch("http://localhost:3000/")
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        this.livescore = result;
       });
   }
 };
