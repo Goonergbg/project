@@ -11,9 +11,16 @@ sqlite.open('databas.sqlite').then(database_ => {
 })
 
 app.get('/', (request, response) => {
-    database.all('SELECT * FROM teams_table').then(test => {
-        response.send(test)
+    database.all('SELECT * FROM teams_table').then(teams => {
+        database.all('SELECT * FROM pl_livescore').then(livescore => {
+            const result = {
+                teams,
+                livescore
+            }
+            response.send(result)
+        })
     })
 })
+
 
 app.listen(3000)
