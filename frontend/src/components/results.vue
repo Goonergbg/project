@@ -1,12 +1,12 @@
 <template>
   <div class="mainContainer">
     <div class="table-left">
-      <table class="table table-striped" v-for="stat in stats" :key="stat.id">
+      <table class="table table-striped" v-for="stat in stats" :key="stat.teams">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
             <th scope="col">
-              <img src="manchester.png" alt="Logo" />
+              <img :src="stat.url" width="100" height="100" />
             </th>
           </tr>
           <tr>
@@ -30,18 +30,34 @@
           <tr>
             <td>Country:</td>
             <td>{{stat.country}}</td>
+          </tr>
+           <tr>
+            <td>League titles:</td>
+            <td>{{stat.league_titles}}</td>
+          </tr>
+           <tr>
+            <td>CL titles:</td>
+            <td>{{stat.cl_titles}}</td>
+          </tr>
+           <tr>
+            <td>Biggest win:</td>
+            <td>{{stat.biggest_win}}</td>
+          </tr>
+          <tr>
+            <td>Biggest win:</td>
+            <td>{{stat.biggest_loss}}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="table-right">
-      <table class="table table-striped" v-for="stat in stats2" :key="stat.id">
+      <table class="table table-striped" v-for="stat in stats2" :key="stat.teams">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
             <th scope="col">
-              <img src="chelsea.jpg" alt="Logo" />
+              <img :src="stat.url" width="100" height="100" />
             </th>
           </tr>
           <tr>
@@ -65,6 +81,22 @@
           <tr>
             <td>Country:</td>
             <td>{{stat.country}}</td>
+          </tr>
+           <tr>
+            <td>League titles:</td>
+            <td>{{stat.league_titles}}</td>
+          </tr>
+           <tr>
+            <td>CL titles:</td>
+            <td>{{stat.cl_titles}}</td>
+          </tr>
+           <tr>
+            <td>Biggest win:</td>
+            <td>{{stat.biggest_win}}</td>
+          </tr>
+          <tr>
+            <td>Biggest win:</td>
+            <td>{{stat.biggest_loss}}</td>
           </tr>
         </tbody>
       </table>
@@ -107,15 +139,18 @@ thead th {
 export default {
   name: "results",
   created() {
-    fetch("/data.json", {
+    fetch("http://localhost:3000/", {
       headers: {
         Accept: "application/json"
       }
     })
       .then(response => response.json())
       .then(result => {
-        (this.stats = result[0]), (this.stats2 = result[1]);
-      });
+        console.log(result)
+        this.stats = [result.teams[0]]
+        this.stats2 = [result.teams[1]]
+        
+      })
   },
   data() {
     return {
