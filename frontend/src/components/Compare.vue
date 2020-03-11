@@ -28,7 +28,7 @@ export default {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        this.stats = result;
+        this.stats = result.teams;
       });
   },
   data() {
