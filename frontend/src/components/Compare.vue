@@ -1,11 +1,12 @@
 <template>
   <div class="main">
     <div class="teams-div">
-      <select class="input">
-        <option value="ManUtd">Manchester United</option>
+      <select class="input" v-model="selectA">
+        <option value="ManUtd" v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
-      <select class="input">
-        <option value="Chelsea">Chelsea</option>
+
+      <select class="input" v-model="selectB">
+        <option value="Chelsea" v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
     </div>
 
@@ -21,7 +22,22 @@
 
 <script>
 export default {
-  name: "Compare"
+  name: "Compare",
+  created() {
+    fetch("http://localhost:3000/")
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        this.stats = result;
+      });
+  },
+  data() {
+    return {
+      selectA: null,
+      selectB: null,
+      stats: null
+    };
+  }
 };
 </script>
 
