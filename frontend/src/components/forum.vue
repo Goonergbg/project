@@ -1,11 +1,9 @@
 <template>
   <div id="main">
-    <!-- <div>.</div> -->
-
     <div class="bigform">
       <div class="form">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" />
+        <label for="form-name">Name:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" />
 
         <div class="form-group">
           <label for="comment">Comment:</label>
@@ -17,23 +15,32 @@
 
       <div class="commentbox">
         <div class="username">Erik</div>
-        <div
-          class="comment"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.</div>
+        <div class="comment">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
+          <p class="commentbutton">
+            <i class="far fa-comment"></i> Kommentera
+          </p>
+        </div>
       </div>
 
       <div class="commentbox">
         <div class="username">Erik</div>
-        <div
-          class="comment"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.</div>
+        <div class="comment">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
+          <p class="commentbutton">
+            <i class="far fa-comment"></i> Kommentera
+          </p>
+        </div>
       </div>
 
       <div class="commentbox">
         <div class="username">Erik</div>
-        <div
-          class="comment"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.</div>
+        <div class="comment">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
+          <p class="commentbutton">
+            <i class="far fa-comment"></i> Kommentera
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -42,6 +49,12 @@
 
 
 <style scoped>
+.commentbutton {
+  float: right;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
 #main {
   background-image: url("/soccerfield.jpg");
   height: 100%;
