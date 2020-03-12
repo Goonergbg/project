@@ -2,18 +2,23 @@
   <div class="main">
     <div class="teams-div">
       <select class="input" v-model="selectA">
-        <option value="ManUtd" v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
 
       <select class="input" v-model="selectB">
-        <option value="Chelsea" v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
     </div>
 
     <div class="compare-div">
-      <router-link to="/results">
-        <input type="button" class="button-compare" value="Compare Teams" />
-      </router-link>
+      <!-- <router-link to="/results"> -->
+      <input
+        @click="$router.push('/results')"
+        type="button"
+        class="button-compare"
+        value="Compare Teams"
+      />
+      <!-- </router-link> -->
     </div>
 
     <router-view></router-view>
