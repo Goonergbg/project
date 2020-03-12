@@ -17,7 +17,9 @@
         <tbody>
           <tr>
             <td>World ranking:</td>
-            <td><strong>{{stat.ranking}}</strong></td>
+            <td>
+              <strong>{{stat.ranking}}</strong>
+            </td>
           </tr>
           <tr>
             <td>Stadium:</td>
@@ -31,15 +33,15 @@
             <td>Country:</td>
             <td>{{stat.country}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>League titles:</td>
             <td>{{stat.league_titles}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>CL titles:</td>
             <td>{{stat.cl_titles}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>Biggest win:</td>
             <td>{{stat.biggest_win}}</td>
           </tr>
@@ -52,7 +54,7 @@
     </div>
 
     <div class="table-right">
-      <table class="table table-striped" v-for="stat in stats2" :key="stat.teams">
+      <table class="table table-striped" v-for="stat in stats" :key="stat.teams">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
@@ -68,7 +70,9 @@
         <tbody>
           <tr>
             <td>World ranking:</td>
-            <td><strong>{{stat.ranking}}</strong></td>
+            <td>
+              <strong>{{stat.ranking}}</strong>
+            </td>
           </tr>
           <tr>
             <td>Stadium:</td>
@@ -82,15 +86,15 @@
             <td>Country:</td>
             <td>{{stat.country}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>League titles:</td>
             <td>{{stat.league_titles}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>CL titles:</td>
             <td>{{stat.cl_titles}}</td>
           </tr>
-           <tr>
+          <tr>
             <td>Biggest win:</td>
             <td>{{stat.biggest_win}}</td>
           </tr>
@@ -146,17 +150,15 @@ export default {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result)
-        this.stats = [result.teams[0]]
-        this.stats2 = [result.teams[1]]
-        
-      })
+        console.log(result);
+        this.stats = result.teams;
+      });
   },
   data() {
     return {
-      stats: null,
-      stats2: null
+      stats: null
     };
-  }
+  },
+  props: ["teamA", "teamB"]
 };
 </script>

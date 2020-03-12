@@ -1,24 +1,23 @@
 <template>
   <div class="main">
     <div class="teams-div">
-      <select class="input" v-model="selectA">
+      <select class="input" v-model="selectA" :teamA="teamA">
+        {{ team }}
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
 
-      <select class="input" v-model="selectB">
+      <select class="input" v-model="selectB" :teamB="teamB">
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
     </div>
 
     <div class="compare-div">
-      <!-- <router-link to="/results"> -->
       <input
         @click="$router.push('/results')"
         type="button"
         class="button-compare"
         value="Compare Teams"
       />
-      <!-- </router-link> -->
     </div>
 
     <router-view></router-view>
@@ -40,7 +39,9 @@ export default {
     return {
       selectA: null,
       selectB: null,
-      stats: null
+      stats: null,
+      teamA: null,
+      teamB: null
     };
   }
 };
