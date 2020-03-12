@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div class="table-left">
-      <table class="table table-striped" v-for="stat in stats" :key="stat.teams">
+      <table class="table table-striped" :key="stat.teams">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="table-right">
-      <table class="table table-striped" v-for="stat in stats" :key="stat.teams">
+      <table class="table table-striped" :key="stat.teams">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>

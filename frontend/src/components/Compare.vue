@@ -2,7 +2,6 @@
   <div class="main">
     <div class="teams-div">
       <select class="input" v-model="selectA" :teamA="teamA">
-        {{ team }}
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
 
