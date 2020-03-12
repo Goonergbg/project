@@ -10,28 +10,22 @@
         </div>
       </div>
       <div class="w-100"></div>
-      <div class="container-fluid">
+      <div class="container-fluid" v-if="articles !== null">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" v-for="arts in articles.slice(1, 3)" :key="arts.title">
             <!------------------------------ COLUMN LEFT 1 ------------------------------>
             <div class="col1">
-              <img :src="articles[1].urlToImage" class="col-bild" />
-              <h2 class="col-title">{{articles[1].title}}</h2>
-              <p class="col-text">{{articles[1].content}}</p>
-              <p class="col-author">{{articles[1].author}}</p>
+              <img :src="arts.urlToImage" class="col-bild" />
+              <h2 class="col-title">{{arts.title}}</h2>
+              <p class="col-text">{{arts.content}}</p>
+              <p class="col-author">{{arts.author}}</p>
             </div>
             <!------------------------------ COLUMN LEFT 2 ------------------------------>
-            <div class="col2">
-              <img :src="articles[2].urlToImage" class="col-bild2" />
-              <h2 class="col-title2">{{articles[2].title}}</h2>
-              <p class="col-text2">{{articles[2].content}}</p>
-              <p class="col-author2">{{articles[2].author}}</p>
-            </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6" id="overflow">
             <h4 class="livescore-title">LIVE SCORE</h4>
-            <table class="table table-bordered table-sm">
+            <table class="table table-bordered table-striped table-sm">
               <thead>
                 <tr class="tr">
                   <th>Position</th>
@@ -41,91 +35,15 @@
                   <th>Points</th>
                 </tr>
               </thead>
-              <tbody class="td">
-                <tr>
-                  <td>1</td>
-                  <td>TB - Monthly</td>
-                  <td>01/04/2012</td>
-                  <td>Default</td>
-                  <td>Declined</td>
+              <tbody class="td" v-if="livescore !== null">
+                <tr v-for="lives in livescore.slice(0, 20)" :key="lives.position">
+                  <td>{{lives.position}}</td>
+                  <td>{{lives.team}}</td>
+                  <td>{{lives.played}}</td>
+                  <td>{{lives.plusminus}}</td>
+                  <td>{{lives.position}}</td>
                 </tr>
-                <tr class="table-active">
-                  <td>2</td>
-                  <td>TB - Monthly</td>
-                  <td>01/04/2012</td>
-                  <td>Approved</td>
-                  <td>Declined</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>TB - Monthly</td>
-                  <td>02/04/2012</td>
-                  <td>Declined</td>
-                  <td>Declined</td>
-                </tr>
-                <tr class="table-active">
-                  <td>4</td>
-                  <td>TB - Monthly</td>
-                  <td>03/04/2012</td>
-                  <td>Pending</td>
-                  <td>Declined</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr class="table-active">
-                  <td>6</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr class="table-active">
-                  <td>8</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr class="table-active">
-                  <td>10</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
-                <tr class="table-active">
-                  <td>12</td>
-                  <td>TB - Monthly</td>
-                  <td>04/04/2012</td>
-                  <td>Call in to confirm</td>
-                  <td>Declined</td>
-                </tr>
+                <tr class="table-active"></tr>
               </tbody>
             </table>
           </div>
@@ -168,13 +86,6 @@ export default {
   props: {
     msg: String
   },
-
-  data() {
-    return {
-      articles: null,
-      livescore: null
-    };
-  },
   created() {
     fetch("/data.json")
       .then(response => response.json())
@@ -186,8 +97,17 @@ export default {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        this.livescore = result;
+        this.livescore = result.livescore;
+        console.log(result.livescore);
+        console.log(result.livescore[1]);
+        console.log(result.livescore[1].played);
       });
+  },
+  data() {
+    return {
+      articles: null,
+      livescore: null
+    };
   }
 };
 // };
@@ -202,6 +122,10 @@ export default {
 </script>
 
 <style scoped>
+#overflow {
+  overflow: auto;
+  max-height: 31em;
+}
 /* Kolumner och deras innehåll:  */
 .container-fluid {
   margin-bottom: -3em;
@@ -213,12 +137,7 @@ export default {
   box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
   margin-bottom: 3em;
 }
-.col2 {
-  background-color: rgb(255, 255, 255);
-  height: auto; /* GÖR DENNA TILL AUTO SEN */
-  float: right;
-  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
-}
+
 .row {
   margin-top: -6em;
   margin-bottom: 3em;
