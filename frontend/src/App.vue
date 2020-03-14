@@ -36,6 +36,7 @@
       </div>
     </nav>
     <router-view />
+    
 
     <button @click="topFunction" title="Go to top" :style="display" class="myBtn">
       <i class="fas fa-arrow-up"></i>
@@ -99,14 +100,12 @@
 </template>
 
 <script>
-//import Compare from "./components/Compare.vue";
 // import headercontent from "./components/headercontent.vue";
 // import News from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    //Compare
     // headercontent,
     // News
   },
