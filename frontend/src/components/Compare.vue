@@ -10,29 +10,29 @@
       </select>
     </div>
 
+    <!-- @click="$router.push('/results')" -->
     <div class="compare-div">
-      <input
-        @click="$router.push('/results')"
-        type="button"
-        class="button-compare"
-        value="Compare Teams"
-      />
+      <input @click="compare" type="button" class="button-compare" value="Compare Teams" />
     </div>
-
+    <results v-if="teamA !== null && teamB !== null" :teamA="teamA" :teamB="teamB"></results>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import results from "./results.vue";
+
 export default {
   name: "Compare",
   created() {
     fetch("http://localhost:3000/")
       .then(response => response.json())
       .then(result => {
-        console.log(result.teams);
         this.stats = result.teams;
       });
+  },
+  components: {
+    results
   },
   data() {
     return {
@@ -42,14 +42,13 @@ export default {
       teamA: null,
       teamB: null
     };
+  },
+  methods: {
+    compare() {
+      this.teamA = this.stats.find(stat => stat.name === this.selectA);
+      this.teamB = this.stats.find(stat => stat.name === this.selectB);
+    }
   }
-  // methods: {
-  //   compare() {
-  //     if (teamA === selectA && teamB === selectB) {
-  //       alert("Hej");
-  //     }
-  //   }
-  // }
 };
 </script>
 
