@@ -30,7 +30,7 @@ export default {
     fetch("http://localhost:3000/")
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        console.log(result.teams);
         this.stats = result.teams;
       });
   },
@@ -43,6 +43,13 @@ export default {
       teamB: null
     };
   }
+  // methods: {
+  //   compare() {
+  //     if (teamA === selectA && teamB === selectB) {
+  //       alert("Hej");
+  //     }
+  //   }
+  // }
 };
 </script>
 
