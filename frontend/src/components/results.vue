@@ -6,7 +6,7 @@
           <tr>
             <th class="heading" scope="col">{{teamA.name}}</th>
             <th scope="col">
-              <img :src="teamA.url" width="100" height="100" />
+              <img :src="teamA.url" />
             </th>
           </tr>
           <tr>
@@ -59,7 +59,7 @@
           <tr>
             <th class="heading" scope="col">{{teamB.name}}</th>
             <th scope="col">
-              <img :src="teamB.url" width="100" height="100" />
+              <img :src="teamB.url" />
             </th>
           </tr>
           <tr>
@@ -109,6 +109,11 @@
 </template>
 
 <style scoped>
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
