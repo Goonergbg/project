@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div class="table-left">
-      <table class="table table-striped" :key="stat.teams">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="table-right">
-      <table class="table table-striped" :key="stat.teams">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th class="heading" scope="col">{{stat.name}}</th>
@@ -142,23 +142,14 @@ thead th {
 <script>
 export default {
   name: "results",
-  created() {
-    fetch("http://localhost:3000/", {
-      headers: {
-        Accept: "application/json"
-      }
-    })
-      .then(response => response.json())
-      .then(result => {
-        console.log(result);
-        this.stats = result.teams;
-      });
-  },
-  data() {
-    return {
-      stats: null
-    };
-  },
-  props: ["teamA", "teamB"]
+  // data() {
+  //   return {
+  //     stats: null
+  //   };
+  // },
+  props: {
+    teamA: Array,
+    teamB: Array
+  }
 };
 </script>
