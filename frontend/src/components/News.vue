@@ -12,14 +12,15 @@
       <div class="w-100"></div>
       <div class="container-fluid" v-if="articles !== null">
         <div class="row">
-          <div class="col-md-6" v-for="arts in articles.slice(1, 3)" :key="arts.title">
+          <div class="col-md-6" v-for="arts in articles.slice(1, 2)" :key="arts.title">
             <!------------------------------ COLUMN LEFT 1 ------------------------------>
             <div class="col1">
-              <img :src="arts.urlToImage" class="col-bild" />
-              <h2 class="col-title">{{arts.title}}</h2>
-              <p class="col-text">{{arts.content}}</p>
-              <p class="col-author">{{arts.author}}</p>
+              <img :src="arts.urlToImage" class="col-bild-sec" />
+              <h2 class="col-title-sec">{{arts.title}}</h2>
+              <p class="col-text-sec">{{arts.content}}</p>
+              <p class="col-author-sec">{{arts.author}}</p>
             </div>
+
             <!------------------------------ COLUMN LEFT 2 ------------------------------>
           </div>
 
@@ -41,7 +42,7 @@
                   <td>{{lives.team}}</td>
                   <td>{{lives.played}}</td>
                   <td>{{lives.plusminus}}</td>
-                  <td>{{lives.position}}</td>
+                  <td>{{lives.points}}</td>
                 </tr>
                 <tr class="table-active"></tr>
               </tbody>
@@ -98,9 +99,7 @@ export default {
       .then(result => {
         console.log(result);
         this.livescore = result.livescore;
-        console.log(result.livescore);
-        console.log(result.livescore[1]);
-        console.log(result.livescore[1].played);
+        console.log(result.livescore[0]);
       });
   },
   data() {
@@ -124,7 +123,7 @@ export default {
 <style scoped>
 #overflow {
   overflow: auto;
-  max-height: 31em;
+  max-height: 26.7em;
 }
 /* Kolumner och deras innehåll:  */
 .container-fluid {
@@ -132,10 +131,44 @@ export default {
 }
 .col1 {
   background-color: rgb(255, 255, 255);
-  height: auto; /* GÖR DENNA TILL AUTO SEN */
+  height: 25em;
   float: right;
   box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
-  margin-bottom: 3em;
+  margin-bottom: 1em;
+}
+.col-bild-sec {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  float: left;
+  width: 350px;
+  height: 220px;
+  margin-right: 15px;
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068);
+  border-radius: 2px;
+  margin: 1em;
+}
+
+.col-text-sec {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Fira Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
+  font-size: 14px;
+  padding: 1em;
+}
+.col-title-sec {
+  font-family: "Fira Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.842);
+  text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
+  font-size: 20px;
+  padding: 1em;
+}
+.col-author-sec {
+  float: right;
+  margin-top: 10px;
+  font-size: 15px;
+  font-family: "Fira Sans", sans-serif;
 }
 
 .row {
@@ -257,6 +290,7 @@ export default {
 /* TOP NYHETEN */
 .artbig {
   margin-bottom: 6em;
+  margin-left: 2em;
 }
 .artbildbig {
   margin-top: 20px;

@@ -54,11 +54,10 @@ textarea {
   width: 50%;
   height: 150px;
   border: 1px solid #ccc;
-  border-bottom: solid 3px #455a64;
   border-radius: 3px;
   margin: 20px;
   font-family: "Fira Sans", sans-serif;
-  box-shadow: 5px 5px 18px #88b2c5;
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068)
   
 }
 
@@ -71,10 +70,9 @@ textarea {
   padding-left: 10px;
   background: #fff;
   color: #000;
-  border-bottom: solid 3px #455a64;
   border-radius: 3px;
   font-family: "Fira Sans", sans-serif;
-  box-shadow: 5px 5px 18px #88b2c5;
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068)
 }
 
 .container {
