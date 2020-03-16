@@ -4,9 +4,9 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th class="heading" scope="col">{{stat.name}}</th>
+            <th class="heading" scope="col">{{teamA.name}}</th>
             <th scope="col">
-              <img :src="stat.url" width="100" height="100" />
+              <img :src="teamA.url" width="100" height="100" />
             </th>
           </tr>
           <tr>
@@ -18,36 +18,36 @@
           <tr>
             <td>World ranking:</td>
             <td>
-              <strong>{{stat.ranking}}</strong>
+              <strong>{{teamA.ranking}}</strong>
             </td>
           </tr>
           <tr>
             <td>Stadium:</td>
-            <td>{{stat.stadium}}</td>
+            <td>{{teamA.stadium}}</td>
           </tr>
           <tr>
             <td>Founded:</td>
-            <td>{{stat.found}}</td>
+            <td>{{teamA.found}}</td>
           </tr>
           <tr>
             <td>Country:</td>
-            <td>{{stat.country}}</td>
+            <td>{{teamA.country}}</td>
           </tr>
           <tr>
             <td>League titles:</td>
-            <td>{{stat.league_titles}}</td>
+            <td>{{teamA.league_titles}}</td>
           </tr>
           <tr>
             <td>CL titles:</td>
-            <td>{{stat.cl_titles}}</td>
+            <td>{{teamA.cl_titles}}</td>
           </tr>
           <tr>
             <td>Biggest win:</td>
-            <td>{{stat.biggest_win}}</td>
+            <td>{{teamA.biggest_win}}</td>
           </tr>
           <tr>
             <td>Biggest win:</td>
-            <td>{{stat.biggest_loss}}</td>
+            <td>{{teamA.biggest_loss}}</td>
           </tr>
         </tbody>
       </table>
@@ -57,9 +57,9 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th class="heading" scope="col">{{stat.name}}</th>
+            <th class="heading" scope="col">{{teamB.name}}</th>
             <th scope="col">
-              <img :src="stat.url" width="100" height="100" />
+              <img :src="teamB.url" width="100" height="100" />
             </th>
           </tr>
           <tr>
@@ -71,36 +71,36 @@
           <tr>
             <td>World ranking:</td>
             <td>
-              <strong>{{stat.ranking}}</strong>
+              <strong>{{teamB.ranking}}</strong>
             </td>
           </tr>
           <tr>
             <td>Stadium:</td>
-            <td>{{stat.stadium}}</td>
+            <td>{{teamB.stadium}}</td>
           </tr>
           <tr>
             <td>Founded:</td>
-            <td>{{stat.found}}</td>
+            <td>{{teamB.found}}</td>
           </tr>
           <tr>
             <td>Country:</td>
-            <td>{{stat.country}}</td>
+            <td>{{teamB.country}}</td>
           </tr>
           <tr>
             <td>League titles:</td>
-            <td>{{stat.league_titles}}</td>
+            <td>{{teamB.league_titles}}</td>
           </tr>
           <tr>
             <td>CL titles:</td>
-            <td>{{stat.cl_titles}}</td>
+            <td>{{teamB.cl_titles}}</td>
           </tr>
           <tr>
             <td>Biggest win:</td>
-            <td>{{stat.biggest_win}}</td>
+            <td>{{teamB.biggest_win}}</td>
           </tr>
           <tr>
             <td>Biggest win:</td>
-            <td>{{stat.biggest_loss}}</td>
+            <td>{{teamB.biggest_loss}}</td>
           </tr>
         </tbody>
       </table>
@@ -148,8 +148,8 @@ export default {
   //   };
   // },
   props: {
-    teamA: Array,
-    teamB: Array
+    teamA: Object,
+    teamB: Object
   }
 };
 </script>
