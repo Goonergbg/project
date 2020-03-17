@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <h3>Pick players</h3>
     <div class="teams-div">
       <select class="input">
         <option value="ManUtd">Marcus Rashford</option>
@@ -26,7 +27,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 170px;
+  margin-top: 50px;
+  margin-top: 100px;
+  font-family: "Fira Sans", sans-serif;
 }
 
 .teams-div {
@@ -67,6 +70,7 @@
   color: #000;
   border-bottom: solid 4px #455a64;
   border-radius: 3px;
+  font-family: "Fira Sans", sans-serif;
 }
 </style>
 
