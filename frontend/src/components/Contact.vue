@@ -12,7 +12,7 @@
         <input class="input" type="text" v-model="name" /> 
         <label>Feedback <i class="far fa-comments"></i></label>
         <textarea v-model="feedback" /> 
-    <input class="input" type="submit" value="Send feedback" /> 
+    <input class="button" type="submit" value="Send feedback" /> 
 </div>
   </form>
   
@@ -73,6 +73,25 @@ textarea {
   border-radius: 3px;
   font-family: "Fira Sans", sans-serif;
   box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068)
+}
+
+.button {
+  font-size: 20px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  width: 50%;
+  padding-left: 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+  font-family: "Fira Sans", sans-serif;
+  box-shadow: 1px 2px 10px 5px rgba(82, 82, 82, 0.068)
+}
+
+.button:hover {
+  background-color: #455a64;
+  color: #fff;
 }
 
 .container {

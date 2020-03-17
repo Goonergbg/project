@@ -86,6 +86,10 @@
 .username {
   font-size: 22px;
 }
+
+.btn.btn-primary {
+  border-radius: 30px;
+}
 </style>
 
 
