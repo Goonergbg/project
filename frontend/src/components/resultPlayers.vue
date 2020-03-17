@@ -1,12 +1,12 @@
 <template>
   <div class="mainContainer">
     <div class="table-left">
-      <table class="table table-striped" v-for="player in players" :key="player.id">
+      <table class="table table-striped">
         <thead>
           <tr>
-            <th class="heading" scope="col">{{player.name}}</th>
+            <th class="heading" scope="col">{{playerA.name}}</th>
             <th scope="col">
-              <img src="marcus.png" alt="Logo" class="playerpicure" />
+              <img :src="playerA.url" />
             </th>
           </tr>
           <tr>
@@ -16,32 +16,50 @@
         </thead>
         <tbody>
           <tr>
+            <td>World ranking:</td>
+            <td>
+              <strong>{{playerA.ranking}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Apps:</td>
+            <td>{{playerA.apps}}</td>
+          </tr>
+          <tr>
             <td>Goals:</td>
-            <td>{{player.goals}}</td>
+            <td>{{playerA.goals}}</td>
           </tr>
           <tr>
             <td>Yellow cards:</td>
-            <td>{{player.yellowCards}}</td>
+            <td>{{playerA.yellow_cards}}</td>
           </tr>
           <tr>
             <td>Red cards:</td>
-            <td>{{player.redCards}}</td>
+            <td>{{playerA.red_cards}}</td>
           </tr>
           <tr>
             <td>Minutes played:</td>
-            <td>{{player.minutesPlayed}}</td>
+            <td>{{playerA.minutes_played}}</td>
+          </tr>
+          <tr>
+            <td>Club:</td>
+            <td>{{playerA.club}}</td>
+          </tr>
+          <tr>
+            <td>Nationality:</td>
+            <td>{{playerA.nationality}}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="table-right">
-      <table class="table table-striped" v-for="player in players2" :key="player.id">
+            <table class="table table-striped">
         <thead>
           <tr>
-            <th class="heading" scope="col">{{player.name}}</th>
+            <th class="heading" scope="col">{{playerB.name}}</th>
             <th scope="col">
-              <img src="olivier.png" alt="Logo" class="playerpicure" />
+              <img :src="playerB.url" />
             </th>
           </tr>
           <tr>
@@ -51,20 +69,38 @@
         </thead>
         <tbody>
           <tr>
-            <td>Goals :</td>
-            <td>{{player.goals}}</td>
+            <td>World ranking:</td>
+            <td>
+              <strong>{{playerB.ranking}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Apps:</td>
+            <td>{{playerB.apps}}</td>
+          </tr>
+          <tr>
+            <td>Goals:</td>
+            <td>{{playerB.goals}}</td>
           </tr>
           <tr>
             <td>Yellow cards:</td>
-            <td>{{player.yellowCards}}</td>
+            <td>{{playerB.yellow_cards}}</td>
           </tr>
           <tr>
             <td>Red cards:</td>
-            <td>{{player.redCards}}</td>
+            <td>{{playerB.red_cards}}</td>
           </tr>
           <tr>
             <td>Minutes played:</td>
-            <td>{{player.minutesPlayed}}</td>
+            <td>{{playerB.minutes_played}}</td>
+          </tr>
+          <tr>
+            <td>Club:</td>
+            <td>{{playerB.club}}</td>
+          </tr>
+          <tr>
+            <td>Nationality:</td>
+            <td>{{playerB.nationality}}</td>
           </tr>
         </tbody>
       </table>
@@ -73,6 +109,11 @@
 </template>
 
 <style scoped>
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
@@ -101,33 +142,16 @@
 thead th {
   border-top: none;
 }
-
-.playerpicure {
-  height: 140px;
-}
 </style>
 
 <script>
 export default {
   name: "resultPlayers",
-  created() {
-    fetch("/data.json", {
-      headers: {
-        Accept: "application/json"
-      }
-    })
-      .then(response => response.json())
-      .then(result => {
-        (this.players = result[3]), (this.players2 = result[4]);
-      });
-  },
-  data() {
-    return {
-      players: null,
-      players2: null
-    };
+  props: {
+    playerA: Object,
+    playerB: Object
   }
-};
+}
 </script>
 
 
