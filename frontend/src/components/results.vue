@@ -46,7 +46,7 @@
             <td>{{teamA.biggest_win}}</td>
           </tr>
           <tr>
-            <td>Biggest win:</td>
+            <td>Biggest loss:</td>
             <td>{{teamA.biggest_loss}}</td>
           </tr>
         </tbody>
@@ -99,7 +99,7 @@
             <td>{{teamB.biggest_win}}</td>
           </tr>
           <tr>
-            <td>Biggest win:</td>
+            <td>Biggest loss:</td>
             <td>{{teamB.biggest_loss}}</td>
           </tr>
         </tbody>
