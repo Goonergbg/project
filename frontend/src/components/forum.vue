@@ -13,17 +13,17 @@
         <button @click="ForumFetch" type="submit" class="btn btn-primary">Submit</button>
       </div>
 
-      <div class="commentbox">
-        <div class="username">Erik</div>
+      <div class="commentbox" v-for="info in info" :key="info.id">
+        <div class="username">{{ info.name }}</div>
         <div class="comment">
-          {{usersComment}}
-          <p class="commentbutton">
+          {{ info.comment }}
+          <!-- <p class="commentbutton">
             <i class="far fa-comment"></i> Kommentera
-          </p>
+          </p>-->
         </div>
       </div>
 
-      <div class="commentbox">
+      <!-- <div class="commentbox">
         <div class="username">Erik</div>
         <div class="comment">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
@@ -31,9 +31,9 @@
             <i class="far fa-comment"></i> Kommentera
           </p>
         </div>
-      </div>
+      </div>-->
 
-      <div class="commentbox">
+      <!-- <div class="commentbox">
         <div class="username">Erik</div>
         <div class="comment">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
@@ -41,7 +41,7 @@
             <i class="far fa-comment"></i> Kommentera
           </p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -96,10 +96,18 @@
 <script>
 export default {
   name: "forum",
+  created() {
+    fetch("http://localhost:3000/")
+      .then(response => response.json())
+      .then(result => {
+        this.info = result.forum;
+      });
+  },
   data() {
     return {
       usersComment: "",
-      userName: ""
+      userName: "",
+      info: null
     };
   },
 
@@ -115,6 +123,16 @@ export default {
         },
         method: "POST"
       });
+      //   //  created() {
+      //   fetch("http://localhost:3000/")
+      //     .then(response => response.json())
+      //     .then(result => {
+      //       this.info = result.forum;
+      //     });
+      // //  }
+      setTimeout(() => {
+        location.reload();
+      }, 1000); // Laddar om sidan efter 1 sekund
     }
   }
 };

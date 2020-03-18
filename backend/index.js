@@ -15,7 +15,7 @@ sqlite.open('databas.sqlite').then(database_ => {
         database.all('SELECT * FROM teams_table').then(teams => {
             database.all('SELECT * FROM pl_livescore').then(livescore => {
                 database.all('SELECT * FROM player_table').then(players => {
-                    database.all('SELECT * FROM forum_table').then(forum => {
+                    database.all('SELECT * FROM forum_table order by id DESC').then(forum => {
                         const result = {
                             teams,
                             livescore,
@@ -31,8 +31,8 @@ sqlite.open('databas.sqlite').then(database_ => {
 
         app.post('/', (request, response) => {
             database.run('INSERT INTO forum_table (name, comment) VALUES (?, ?)', [request.body.name, request.body.comment])
-                .then(rows => {
-                    response.send(rows)
+                .then(() => {
+                    response.send()
                 })
         })
     })
