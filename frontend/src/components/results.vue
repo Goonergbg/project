@@ -6,7 +6,7 @@
           <tr>
             <th class="heading" scope="col">{{teamA.name}}</th>
             <th scope="col">
-              <img :src="teamA.url" width="100" height="100" />
+              <img :src="teamA.url" />
             </th>
           </tr>
           <tr>
@@ -46,7 +46,7 @@
             <td>{{teamA.biggest_win}}</td>
           </tr>
           <tr>
-            <td>Biggest win:</td>
+            <td>Biggest loss:</td>
             <td>{{teamA.biggest_loss}}</td>
           </tr>
         </tbody>
@@ -59,7 +59,7 @@
           <tr>
             <th class="heading" scope="col">{{teamB.name}}</th>
             <th scope="col">
-              <img :src="teamB.url" width="100" height="100" />
+              <img :src="teamB.url" />
             </th>
           </tr>
           <tr>
@@ -99,7 +99,7 @@
             <td>{{teamB.biggest_win}}</td>
           </tr>
           <tr>
-            <td>Biggest win:</td>
+            <td>Biggest loss:</td>
             <td>{{teamB.biggest_loss}}</td>
           </tr>
         </tbody>
@@ -109,6 +109,11 @@
 </template>
 
 <style scoped>
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;

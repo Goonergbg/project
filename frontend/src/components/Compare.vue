@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <h3>Pick teams</h3>
     <div class="teams-div">
       <select class="input" v-model="selectA" :teamA="teamA">
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
@@ -61,7 +62,7 @@ export default {
   align-items: center;
   margin-top: 50px;
   margin-top: 100px;
-  margin-top: 170px;
+  font-family: "Fira Sans", sans-serif;
 }
 
 .teams-div {
@@ -97,10 +98,11 @@ export default {
   height: 40px;
   border: 1px solid #ccc;
   padding: 0 10px;
-  width: 100%;
+  width: 65%;
   background: #fff;
   color: #000;
   border-bottom: solid 4px #455a64;
   border-radius: 3px;
+  font-family: "Fira Sans", sans-serif;
 }
 </style>
