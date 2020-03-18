@@ -26,22 +26,6 @@
       <div class="submitResult">
         <div v-if="submitFeedback">Thanks for sharing your feedback!</div>
       </div>
-
-<div class="container">
-        <label>Name <i class="fas fa-signature"></i></label>
-        <input class="input" type="text" v-model="name" /> 
-        <label>Feedback <i class="far fa-comments"></i></label>
-        <textarea v-model="feedback" /> 
-    <input class="button" type="submit" value="Send feedback" /> 
-</div>
-
-  
-  <div class="container">
-    <div class="submitResult">
-    <div v-if="submitFeedback">
-      Thanks for sharing your feedback!
-    </div>
-     </div>
     </div>
   </div>
 </template>
