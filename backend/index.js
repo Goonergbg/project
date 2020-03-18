@@ -11,17 +11,6 @@ let database
 sqlite.open('databas.sqlite').then(database_ => {
     database = database_
 
-
-    // app.get('/', (request, response) => {
-    //     database.all('SELECT * FROM teams_table').then(teams => {
-    //         database.all('SELECT * FROM pl_livescore').then(livescore => {
-    //             const result = {
-    //                 teams,
-    //                 livescore
-    //             }
-    //             response.send(result)
-    //         })
-
     app.get('/', (request, response) => {
         database.all('SELECT * FROM teams_table').then(teams => {
             database.all('SELECT * FROM pl_livescore').then(livescore => {
@@ -43,10 +32,10 @@ sqlite.open('databas.sqlite').then(database_ => {
                     response.send(rows)
                 })
         })
-
-        app.listen(3000)
     })
 })
+
+app.listen(3000)
 
 
 //skriver name och comment så att jag inte behöver lägga in fler ? vilket annars hade behövts pga att varje inlägg får ett ID. 
