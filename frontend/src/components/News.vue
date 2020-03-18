@@ -6,7 +6,6 @@
           <img :src="articles[0].urlToImage" class="artbildbig" />
           <h2 class="arttitlebig">{{articles[0].title}}</h2>
           <p class="arttextbig">{{articles[0].content}}</p>
-          <p class="artauthor">{{articles[0].author}}</p>
         </div>
       </div>
       <div class="w-100"></div>
@@ -18,14 +17,13 @@
               <img :src="arts.urlToImage" class="col-bild-sec" />
               <h2 class="col-title-sec">{{arts.title}}</h2>
               <p class="col-text-sec">{{arts.content}}</p>
-              <p class="col-author-sec">{{arts.author}}</p>
             </div>
 
             <!------------------------------ COLUMN LEFT 2 ------------------------------>
           </div>
 
           <div class="col-md-6" id="overflow">
-            <h4 class="livescore-title">LIVE SCORE</h4>
+            <h4 class="livescore-title">LIVE TABLE</h4>
             <table class="table table-bordered table-striped table-sm">
               <thead>
                 <tr class="tr">
@@ -56,26 +54,22 @@
         <img :src="articles[3].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[3].title}}</h2>
         <p class="arttext">{{articles[3].content}}</p>
-        <p class="artauthor">{{articles[3].author}}</p>
       </div>
       <div class="col m-3">
         <img :src="articles[4].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[4].title}}</h2>
         <p class="arttext">{{articles[4].content}}</p>
-        <p class="artauthor">{{articles[4].author}}</p>
       </div>
       <div class="w-100"></div>
       <div class="col m-3">
         <img :src="articles[6].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[6].title}}</h2>
         <p class="arttext">{{articles[6].content}}</p>
-        <p class="artauthor">{{articles[6].author}}</p>
       </div>
       <div class="col m-3">
         <img :src="articles[7].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[7].title}}</h2>
         <p class="arttext">{{articles[7].content}}</p>
-        <p class="artauthor">{{articles[7].author}}</p>
       </div>
     </div>
   </div>
@@ -166,9 +160,11 @@ export default {
 }
 .col-author-sec {
   float: right;
-  margin-top: 10px;
   font-size: 15px;
   font-family: "Fira Sans", sans-serif;
+  text-align: justify; /* For Edge */
+  text-align-last: right;
+  margin-right: 10px;
 }
 
 .row {
@@ -213,6 +209,8 @@ export default {
   margin-top: 10px;
   font-size: 15px;
   font-family: "Fira Sans", sans-serif;
+  text-align: justify; /* For Edge */
+  text-align-last: right;
 }
 .col-bild2 {
   margin-top: 25px;
@@ -240,12 +238,6 @@ export default {
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
   font-size: 20px;
-}
-.col-author2 {
-  float: right;
-  margin-top: 10px;
-  font-size: 15px;
-  font-family: "Fira Sans", sans-serif;
 }
 .livescore-title {
   text-align: center;
@@ -316,11 +308,5 @@ export default {
   font-size: 26px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
-}
-.artauthor {
-  float: right;
-  margin-top: 10px;
-  font-size: 15px;
-  font-family: "Fira Sans", sans-serif;
 }
 </style>
