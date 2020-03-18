@@ -7,16 +7,18 @@
 
         <div class="form-group">
           <label for="comment">Comment:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
+          <textarea class="form-control" rows="5" id="comment" v-model="usersComment"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button @click="ForumFetch" type="submit" class="btn btn-primary">Submit</button>
       </div>
+
+      <!-- let commentvariabel = {{usersComment}}  -->
 
       <div class="commentbox">
         <div class="username">Erik</div>
         <div class="comment">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
+          {{usersComment}}
           <p class="commentbutton">
             <i class="far fa-comment"></i> Kommentera
           </p>
@@ -56,7 +58,7 @@
 }
 
 #main {
-  background-image: url("/soccerfield.jpg");
+  /* background-image: url("/soccerfield.jpg"); */
   height: 100%;
   padding-top: 60px;
 }
@@ -79,7 +81,7 @@
   width: 50%;
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.103);
+  box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
   margin: 5px;
 }
 
@@ -91,8 +93,30 @@
 
 <script>
 export default {
-  name: "forum"
+  name: "forum",
+  data() {
+    return {
+      usersComment: ""
+    };
+  },
+  methods: {
+    ForumFetch() {
+      //       fetch('http://localhost:8080/#/, {
+      //   body: JSON.stringify({ name: 'Teststad', comment: 1000 }),
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   method: 'POST'
+      //     }
+      // })
+      // }
+    }
+  }
 };
+
+// app.listen(3000, () => {
+//   console.log("Välkomm en till Blackjack!");
+// });
 </script>
 
 
