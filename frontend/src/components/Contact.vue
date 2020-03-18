@@ -14,6 +14,7 @@
         <textarea v-model="feedback" /> 
     <input class="button" type="submit" value="Send feedback" /> 
 </div>
+
   </form>
   
   <div class="container">
