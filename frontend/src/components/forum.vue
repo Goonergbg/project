@@ -10,7 +10,7 @@
           <textarea class="form-control" rows="5" id="comment" v-model="usersComment"></textarea>
         </div>
 
-        <button @click="ForumFetch" type="submit" class="btn btn-primary">Submit</button>
+        <button @click="ForumFetch" type="submit" class="forumButton">Submit</button>
       </div>
 
       <div class="commentbox" v-for="info in info" :key="info.id">
@@ -18,30 +18,10 @@
         <div class="comment">
           {{ info.comment }}
           <!-- <p class="commentbutton">
-            <i class="far fa-comment"></i> Kommentera
+            <i class="far fa-comment"></i> Kommentera 
           </p>-->
         </div>
       </div>
-
-      <!-- <div class="commentbox">
-        <div class="username">Erik</div>
-        <div class="comment">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
-          <p class="commentbutton">
-            <i class="far fa-comment"></i> Kommentera
-          </p>
-        </div>
-      </div>-->
-
-      <!-- <div class="commentbox">
-        <div class="username">Erik</div>
-        <div class="comment">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, impedit. Illum, fuga? Perspiciatis, officia doloribus. Porro nulla, maiores blanditiis doloremque inventore, ut eligendi consequatur sit numquam iste vero earum in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ratione repellendus autem. Doloribus praesentium ut, deserunt esse, recusandae quo perferendis veritatis, non cupiditate corrupti sit consectetur animi! Voluptatum, ex labore.
-          <p class="commentbutton">
-            <i class="far fa-comment"></i> Kommentera
-          </p>
-        </div>
-      </div>-->
     </div>
   </div>
 </template>
@@ -55,8 +35,19 @@
   padding-top: 20px;
 }
 
+.forumButton {
+  background-color: #455a64;
+  font-family: "Fira Sans", sans-serif;
+  border-radius: 30px;
+  padding: 10px 25px;
+  color: white;
+}
+
+.forumButton:hover {
+  background-color: #888888;
+}
+
 #main {
-  /* background-image: url("/soccerfield.jpg"); */
   height: 100%;
   padding-top: 60px;
 }
@@ -123,13 +114,6 @@ export default {
         },
         method: "POST"
       });
-      //   //  created() {
-      //   fetch("http://localhost:3000/")
-      //     .then(response => response.json())
-      //     .then(result => {
-      //       this.info = result.forum;
-      //     });
-      // //  }
       setTimeout(() => {
         location.reload();
       }, 1000); // Laddar om sidan efter 1 sekund
