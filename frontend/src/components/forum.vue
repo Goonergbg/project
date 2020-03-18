@@ -3,7 +3,7 @@
     <div class="bigform">
       <div class="form">
         <label for="form-name">Name:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" />
+        <input type="text" class="form-control" id="exampleInputEmail1" v-model="userName" />
 
         <div class="form-group">
           <label for="comment">Comment:</label>
@@ -12,8 +12,6 @@
 
         <button @click="ForumFetch" type="submit" class="btn btn-primary">Submit</button>
       </div>
-
-      <!-- let commentvariabel = {{usersComment}}  -->
 
       <div class="commentbox">
         <div class="username">Erik</div>
@@ -100,27 +98,24 @@ export default {
   name: "forum",
   data() {
     return {
-      usersComment: ""
+      usersComment: "",
+      userName: ""
     };
   },
+
   methods: {
     ForumFetch() {
-      //       fetch('http://localhost:8080/#/, {
-      //   body: JSON.stringify({ name: 'Teststad', comment: 1000 }),
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   method: 'POST'
-      //     }
-      // })
-      // }
+      fetch("http://localhost:3000/", {
+        body: JSON.stringify({
+          name: this.userName,
+          comment: this.usersComment
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
     }
   }
 };
-
-// app.listen(3000, () => {
-//   console.log("Välkomm en till Blackjack!");
-// });
 </script>
-
-
