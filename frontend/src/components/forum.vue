@@ -116,7 +116,7 @@ export default {
       });
       setTimeout(() => {
         location.reload();
-      }, 1000); // Laddar om sidan efter 1 sekund
+      }, 100); // Laddar om sidan efter 0.1 sekund
     }
   }
 };
