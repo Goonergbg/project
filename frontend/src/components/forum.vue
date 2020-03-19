@@ -14,13 +14,15 @@
       </div>
 
       <div class="commentbox" v-for="info in info" :key="info.id">
-        <div class="username">{{ info.name }}</div>
+        <div class="commentbutton"><i class="fas fa-calendar-alt"></i> {{ info.date }}</div>
+        <div class="username"><i class="fas fa-user"></i> {{ info.name }}</div>
         <div class="comment">
-          {{ info.comment }}
+         <i class="far fa-comment"></i> {{ info.comment }}
           <!-- <p class="commentbutton">
             <i class="far fa-comment"></i> Kommentera 
           </p>-->
         </div>
+      
       </div>
     </div>
   </div>
@@ -31,8 +33,6 @@
 <style scoped>
 .commentbutton {
   float: right;
-  font-size: 18px;
-  padding-top: 20px;
 }
 
 .forumButton {
@@ -74,8 +74,12 @@
   margin: 5px;
 }
 
+.comment {
+  padding-top: 20px;
+}
+
 .username {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .btn.btn-primary {

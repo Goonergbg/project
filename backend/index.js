@@ -1,6 +1,7 @@
 const express = require('express')
 const sqlite = require('sqlite')
 const cors = require('cors')
+const moment = require('moment')
 
 const app = express()
 app.use(express.json())
@@ -30,7 +31,8 @@ sqlite.open('databas.sqlite').then(database_ => {
 
 
         app.post('/', (request, response) => {
-            database.run('INSERT INTO forum_table (name, comment) VALUES (?, ?)', [request.body.name, request.body.comment])
+            const date = moment().format('YYYY-MM-DD')
+            database.run('INSERT INTO forum_table (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date])
                 .then(() => {
                     response.send()
                 })
