@@ -2,11 +2,11 @@
   <div class="main">
     <h3>Pick teams</h3>
     <div class="teams-div">
-      <select class="input" v-model="selectA" :teamA="teamA">
+      <select v-model="selectA" :teamA="teamA">
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
 
-      <select class="input" v-model="selectB" :teamB="teamB">
+      <select v-model="selectB" :teamB="teamB">
         <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
       </select>
     </div>
@@ -80,17 +80,31 @@ export default {
   margin-bottom: 30px;
 }
 
-.input {
+select::-ms-expand {
+  display: none;
+}
+
+select {
   font-size: 20px;
   height: 40px;
-  border: 1px solid #ccc;
   margin: 20px;
   width: 30%;
   padding-left: 10px;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #455a64;
+  border: 1px solid #ccc;
+  border-bottom: solid 3px #455a64;
   border-radius: 3px;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 15px top 1em, right 10px top 1em;
+  background-size: 5px 5px, 5px 5px;
 }
 
 .button-compare {
@@ -101,7 +115,7 @@ export default {
   width: 65%;
   background: #fff;
   color: #000;
-  border-bottom: solid 4px #455a64;
+  border-bottom: solid 3px #455a64;
   border-radius: 3px;
   font-family: "Fira Sans", sans-serif;
 }
