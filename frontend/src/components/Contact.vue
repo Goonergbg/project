@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     submit() {
-      if (this.name && this.feedback) return (this.submitFeedback = true);
+      if (this.name && this.feedback) { return this.submitFeedback = true }
       this.errors = [];
       if (!this.name) this.errors.push("Name required");
       if (!this.feedback) this.errors.push("Feedback required");
