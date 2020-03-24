@@ -6,23 +6,28 @@
         <input type="text" class="form-control" id="exampleInputEmail1" v-model="userName" />
 
         <div class="form-group">
-          <label for="comment">Comment:</label>
-          <textarea class="form-control" rows="5" id="comment" v-model="usersComment"></textarea>
+          <label for="post">Post:</label>
+          <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
         </div>
 
         <button @click="ForumFetch" type="submit" class="forumButton">Submit</button>
       </div>
 
       <div class="commentbox" v-for="info in info" :key="info.id">
-        <div class="commentbutton"><i class="fas fa-calendar-alt"></i> {{ info.date }}</div>
-        <div class="username"><i class="fas fa-user"></i> {{ info.name }}</div>
-        <div class="comment">
-         <i class="far fa-comment"></i> {{ info.comment }}
-          <!-- <p class="commentbutton">
-            <i class="far fa-comment"></i> Kommentera 
-          </p>-->
+        <div class="commentbutton">
+          <i class="fas fa-calendar-alt"></i>
+          {{ info.date }}
         </div>
-      
+        <div class="username">
+          <i class="fas fa-user"></i>
+          {{ info.name }}
+        </div>
+        <div class="post">
+          {{ info.post }}
+          <p class="commentbutton">
+            <i class="far fa-comment"></i> Comment
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +37,8 @@
 
 <style scoped>
 .commentbutton {
-  float: right;
+  text-align: right;
+  margin-top: 8px;
 }
 
 .forumButton {
@@ -69,7 +75,7 @@
   background-color: rgb(238, 238, 238);
   width: 50%;
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 20px 5px 20px;
   box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
   margin: 5px;
 }
@@ -100,7 +106,7 @@ export default {
   },
   data() {
     return {
-      usersComment: "",
+      userPost: "",
       userName: "",
       info: null
     };
@@ -111,7 +117,7 @@ export default {
       fetch("http://localhost:3000/", {
         body: JSON.stringify({
           name: this.userName,
-          comment: this.usersComment
+          post: this.userPost
         }),
         headers: {
           "Content-Type": "application/json"
