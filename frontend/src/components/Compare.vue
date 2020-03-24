@@ -1,22 +1,50 @@
 <template>
-  <div class="main">
-    <h3>Pick teams</h3>
-    <div class="teams-div">
-      <select v-model="selectA" :teamA="teamA">
-        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
-      </select>
+  <div>
+    <div class="main">
+      <h3>Pick teams</h3>
+      <div class="teams-div">
+        <select v-model="selectA" :teamA="teamA">
+          <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        </select>
 
-      <select v-model="selectB" :teamB="teamB">
-        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
-      </select>
+        <select v-model="selectB" :teamB="teamB">
+          <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        </select>
+      </div>
+
+      <!-- @click="$router.push('/results')" -->
+      <div class="compare-div">
+        <input @click="compare" type="button" class="button-compare" value="Compare Teams" />
+      </div>
+      <results v-if="teamA !== null && teamB !== null" :teamA="teamA" :teamB="teamB"></results>
+      <router-view></router-view>
     </div>
 
-    <!-- @click="$router.push('/results')" -->
-    <div class="compare-div">
-      <input @click="compare" type="button" class="button-compare" value="Compare Teams" />
+    <!---- Reklam ----->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="https://www.intersport.se/">
+            <img src="intersport.jpg" alt="Logo" class="reklambild" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="http://www.stadium.com/">
+            <img src="stadium.jpg" alt="Logo" class="reklambild" />
+          </a>
+        </div>
+        <div class="w-100"></div>
+        <div class="col" id="reklamtext">
+          Just nu!
+          <span style="color:#FF0000">25%</span> på all Sportswear! Fram till 23:59 den 25/3 har du 25% rabatt på våra ordinarie-, paket- och Memberpriser.
+        </div>
+        <div class="col" id="reklamtext">
+          25% på alla
+          <span style="color:#FF0000">vårjackor</span> för dam och herr! Gäller ord. pris.
+        </div>
+      </div>
     </div>
-    <results v-if="teamA !== null && teamB !== null" :teamA="teamA" :teamB="teamB"></results>
-    <router-view></router-view>
+    <!---- Reklam slut ----->
   </div>
 </template>
 
@@ -54,6 +82,23 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  margin-top: 50px;
+}
+
+#reklamtext {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 60px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+}
+
+.reklambild {
+  height: 300px;
+  margin-left: 10px;
+}
+
 .main {
   min-height: 60vh;
   display: flex;
@@ -102,7 +147,8 @@ select {
   -ms-appearance: none;
   appearance: none;
   background-repeat: no-repeat;
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
   background-position: right 15px top 1em, right 10px top 1em;
   background-size: 5px 5px, 5px 5px;
 }

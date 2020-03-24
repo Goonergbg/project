@@ -18,33 +18,23 @@
               <h2 class="col-title-sec">{{arts.title}}</h2>
               <p class="col-text-sec">{{arts.content}}</p>
             </div>
-
-            <!------------------------------ COLUMN LEFT 2 ------------------------------>
           </div>
 
           <div class="col-md-6" id="overflow">
             <h4 class="livescore-title">LIVE TABLE</h4>
-            <table class="table table-bordered table-striped table-sm">
-              <thead>
-                <tr class="tr">
-                  <th>Position</th>
-                  <th>Team</th>
-                  <th>Played</th>
-                  <th>+ / -</th>
-                  <th>Points</th>
-                </tr>
-              </thead>
-              <tbody class="td" v-if="livescore !== null">
-                <tr v-for="lives in livescore.slice(0, 20)" :key="lives.position">
-                  <td>{{lives.position}}</td>
-                  <td>{{lives.team}}</td>
-                  <td>{{lives.played}}</td>
-                  <td>{{lives.plusminus}}</td>
-                  <td>{{lives.points}}</td>
-                </tr>
-                <tr class="table-active"></tr>
-              </tbody>
-            </table>
+
+            <div class="nextprevbuttons">
+              <button class="buttontable" @click="component = 'firsttable' ">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="buttontable2" @click="component = 'secondtable' ">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <!-- This is where the components of the tables are being imported and shown onto this page -->
+            <component :is="component"></component>
+            <!-- Tables end here -->
           </div>
         </div>
       </div>
@@ -76,10 +66,19 @@
 </template>
 
 <script>
+import firsttable from "./firsttable.vue";
+import secondtable from "./secondtable.vue";
+import thirdtable from "./thirdtable.vue";
+
 export default {
   name: "News",
   props: {
     msg: String
+  },
+  components: {
+    firsttable,
+    secondtable,
+    thirdtable
   },
   created() {
     fetch("/data.json")
@@ -99,22 +98,58 @@ export default {
   data() {
     return {
       articles: null,
-      livescore: null
+      livescore: null,
+      component: "firsttable"
     };
   }
 };
-// };
-
-// fetch("/data.json")
-//   .then(response => response.json())
-//   .then(result => {
-//     console.log(result);
-//     // this.articles = result.articles;
-//     console.log(result[2].articles[0].id);
-//   });
 </script>
 
 <style scoped>
+.nextprevbuttons {
+  text-align: center;
+  margin-bottom: 7px;
+}
+.buttontable {
+  background-color: #ff9900;
+  border-radius: 42px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 4px 14px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+.buttontable2 {
+  background-color: #ff9900;
+  border-radius: 42px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 4px 14px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  margin-left: 2px;
+}
+.buttontable:hover {
+  background-color: #426675;
+}
+.buttontable:active {
+  position: relative;
+  top: 1px;
+}
+.buttontable2:hover {
+  background-color: #426675;
+}
+.buttontable2:active {
+  position: relative;
+  top: 1px;
+}
+
 #overflow {
   overflow: auto;
   max-height: 26.7em;
@@ -125,7 +160,7 @@ export default {
 }
 .col1 {
   background-color: rgb(255, 255, 255);
-  height: 25em;
+  height: 26.6em;
   float: right;
   box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
   margin-bottom: 1em;
@@ -241,7 +276,7 @@ export default {
 }
 .livescore-title {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 3px;
   font-family: "Fira Sans", sans-serif;
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
 }
