@@ -142,6 +142,13 @@ export default {
   position: relative;
   top: 1px;
 }
+.buttontable2:hover {
+  background-color: #426675;
+}
+.buttontable2:active {
+  position: relative;
+  top: 1px;
+}
 
 #overflow {
   overflow: auto;
