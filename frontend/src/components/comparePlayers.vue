@@ -1,22 +1,52 @@
 <template>
-  <div class="main">
-    <h3>Pick players</h3>
-    <div class="teams-div">
-      <select v-model="selectA" :playerA="playerA">
-        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
-      </select>
+  <div>
+    <div class="main">
+      <h3>Pick players</h3>
+      <div class="teams-div">
+        <select v-model="selectA" :playerA="playerA">
+          <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        </select>
 
-      <select v-model="selectB" :playerB="playerB">
-        <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
-      </select>
+        <select v-model="selectB" :playerB="playerB">
+          <option v-for="stat in stats" :key="stat.id">{{stat.name}}</option>
+        </select>
+      </div>
+
+      <div class="compare-div">
+        <input @click="compare" type="button" class="button-compare" value="Compare Players" />
+      </div>
+      <resultPlayers
+        v-if="playerA !== null && playerB !== null"
+        :playerA="playerA"
+        :playerB="playerB"
+      ></resultPlayers>
+      <router-view></router-view>
     </div>
 
-    
-    <div class="compare-div">
-      <input @click="compare" type="button" class="button-compare" value="Compare Players" />
+    <!---- Reklam ----->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="https://www.pepsi.se/">
+            <img src="pepsi.jpg" alt="Logo" class="reklambild" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="https://www.zalando.se/">
+            <img src="zalando.png" alt="Logo" class="reklambild" />
+          </a>
+        </div>
+        <div class="w-100"></div>
+        <div class="col" id="reklamtext">
+          Släck törsten med Sveriges
+          <span style="color:#FF0000">godaste dryck.</span>
+        </div>
+        <div class="col" id="reklamtext">
+          <span style="color:#FF0000">MID SEASON SALE:</span> Spara upp till 50% hos Zalando.
+        </div>
+      </div>
     </div>
-    <resultPlayers v-if="playerA !== null && playerB !== null" :playerA="playerA" :playerB="playerB"></resultPlayers>
-    <router-view></router-view>
+    <!---- Reklam slut ----->
   </div>
 </template>
 
@@ -55,6 +85,23 @@ export default {
 
 
 <style scoped>
+.container {
+  margin-top: 50px;
+}
+
+#reklamtext {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 60px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+}
+
+.reklambild {
+  height: 300px;
+  margin-left: 10px;
+}
+
 .main {
   min-height: 60vh;
   display: flex;
@@ -103,7 +150,8 @@ select {
   -ms-appearance: none;
   appearance: none;
   background-repeat: no-repeat;
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
   background-position: right 15px top 1em, right 10px top 1em;
   background-size: 5px 5px, 5px 5px;
 }
