@@ -14,7 +14,7 @@
       </div>
 
       <div class="commentbox" v-for="info in info" :key="info.id">
-        <div class="commentbutton">
+        <div class="calendarIcon">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
         </div>
@@ -24,9 +24,18 @@
         </div>
         <div class="post">
           {{ info.post }}
-          <p class="commentbutton">
+          <p class="commentIcon" @click="commentField">
             <i class="far fa-comment"></i> Comment
           </p>
+        </div>
+
+        <!-- Comment-field that shows when user clicks on comment-button -->
+        <div v-if="createComment" class="form" id="commentField">
+          <div class="form-group">
+            <label for="post">Comment:</label>
+            <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
+          </div>
+          <button type="submit" class="commentButton">Post comment</button>
         </div>
       </div>
     </div>
@@ -36,7 +45,12 @@
 
 
 <style scoped>
-.commentbutton {
+.commentIcon {
+  text-align: right;
+  margin-top: 8px;
+}
+
+.calendarIcon {
   text-align: right;
   margin-top: 8px;
 }
@@ -51,6 +65,22 @@
 
 .forumButton:hover {
   background-color: #888888;
+}
+
+#commentField {
+  width: 100%;
+}
+
+.commentButton {
+  background-color: #455a64;
+  font-family: "Fira Sans", sans-serif;
+  border-radius: 30px;
+  padding: 5px 15px;
+  color: white;
+}
+
+.commentButton:hover {
+  background-color: #ff9900;
 }
 
 #main {
@@ -108,7 +138,8 @@ export default {
     return {
       userPost: "",
       userName: "",
-      info: null
+      info: null,
+      createComment: false
     };
   },
 
@@ -127,6 +158,9 @@ export default {
       setTimeout(() => {
         location.reload();
       }, 100); // Laddar om sidan efter 0.1 sekund
+    },
+    commentField() {
+      this.createComment = true;
     }
   }
 };
