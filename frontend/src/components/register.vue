@@ -28,7 +28,8 @@
 
 <div class="container">
       <div class="submitResult">
-        <div v-if="submitRegister">Thanks for joining us</div>
+        <div v-if="submitRegister">Your account has been sucessfully created <br>
+          Your username: {{userName}}</div>
       </div>
     </div>
 
