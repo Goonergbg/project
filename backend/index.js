@@ -32,7 +32,7 @@ sqlite.open('databas.sqlite').then(database_ => {
 
         app.post('/', (request, response) => {
             const date = moment().format('YYYY-MM-DD')
-            database.run('INSERT INTO forum_table (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date])
+            database.run('INSERT INTO forum_table (name, post, date) VALUES (?, ?, ?)', [request.body.name, request.body.post, date])
                 .then(() => {
                     response.send()
                 })
@@ -47,4 +47,3 @@ sqlite.open('databas.sqlite').then(database_ => {
 })
 
 app.listen(3000)
-
