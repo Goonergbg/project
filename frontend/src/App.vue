@@ -32,6 +32,9 @@
           <li class="nav-item">
             <router-link to="/forum" class="nav-link">Forum</router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/register" class="nav-link">Register</router-link>
+          </li>
         </ul>
       </div>
     </nav>

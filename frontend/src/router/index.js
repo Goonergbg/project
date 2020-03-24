@@ -6,6 +6,7 @@ import comparePlayers from "../components/comparePlayers.vue"
 import results from "../components/results.vue"
 import resultPlayers from "../components/resultPlayers.vue"
 import forum from "../components/forum.vue"
+import register from "../components/register.vue"
 
 Vue.use(VueRouter)
 
@@ -38,6 +39,11 @@ const routes = [{
     path: '/forum',
     name: 'forum',
     component: forum
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: register
   },
 ]
 

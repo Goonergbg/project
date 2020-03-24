@@ -28,7 +28,7 @@ sqlite.open('databas.sqlite').then(database_ => {
                 })
             })
         })
-
+    })
 
         app.post('/', (request, response) => {
             const date = moment().format('YYYY-MM-DD')
@@ -36,11 +36,15 @@ sqlite.open('databas.sqlite').then(database_ => {
                 .then(() => {
                     response.send()
                 })
-        })
-    })
+        }) 
+
+    app.post('/register', (request, response) => {
+        database.run('INSERT INTO users (user_name, password) VALUES (?, ?)', [request.body.user_name, request.body.password])
+            .then(() => {
+                response.send()
+            })
+    }) 
 })
 
 app.listen(3000)
 
-
-//skriver name och comment så att jag inte behöver lägga in fler ? vilket annars hade behövts pga att varje inlägg får ett ID. 
