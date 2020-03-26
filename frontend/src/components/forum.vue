@@ -24,13 +24,13 @@
         </div>
         <div class="post">
           {{ info.post }}
-          <p class="commentIcon" @click="commentField">
+          <p class="commentIcon" @click="commentField(info.id)">
             <i class="far fa-comment"></i> Comment
           </p>
         </div>
 
         <!-- Comment-field that shows when user clicks on comment-button -->
-        <div v-if="createComment" class="form" id="commentField">
+        <div v-if="info.id === selectedPost" class="form" id="commentField">
           <div class="form-group">
             <label for="post">Comment:</label>
             <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
@@ -139,7 +139,8 @@ export default {
       userPost: "",
       userName: "",
       info: null,
-      createComment: false
+      createComment: false,
+      selectedPost: null
     };
   },
 
@@ -159,8 +160,9 @@ export default {
         location.reload();
       }, 100); // Laddar om sidan efter 0.1 sekund
     },
-    commentField() {
+    commentField(id) {
       this.createComment = true;
+      this.selectedPost = id;
     }
   }
 };
