@@ -7,6 +7,7 @@ import results from "../components/results.vue"
 import resultPlayers from "../components/resultPlayers.vue"
 import forum from "../components/forum.vue"
 import register from "../components/register.vue"
+import login from "../components/login.vue"
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [{
     name: 'register',
     component: register
   },
+   {
+     path: '/login',
+     name: 'login',
+     component: login
+   },
 ]
 
 const router = new VueRouter({
