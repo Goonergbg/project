@@ -11,7 +11,7 @@
           Password
           <i class="fas fa-lock"></i>
         </label>
-        <input class="input" type="text" placeholder="password" v-model="passWord" />
+        <input class="input" type="password" placeholder="password" v-model="passWord" />
         <input class="button" type="submit" value="Log In" />
       </div>
     </form>
