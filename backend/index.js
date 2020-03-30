@@ -30,20 +30,20 @@ sqlite.open('databas.sqlite').then(database_ => {
         })
     })
 
-        app.post('/', (request, response) => {
-            const date = moment().format('YYYY-MM-DD')
-            database.run('INSERT INTO forum_table (name, post, date) VALUES (?, ?, ?)', [request.body.name, request.body.post, date])
-                .then(() => {
-                    response.send()
-                })
-        }) 
+    app.post('/', (request, response) => {
+        const date = moment().format('YYYY-MM-DD')
+        database.run('INSERT INTO forum_table (name, post, comment, date) VALUES (?, ?, ?, ?)', [request.body.name, request.body.post, request.body.comment, date])
+            .then(() => {
+                response.send()
+            })
+    })
 
     app.post('/register', (request, response) => {
         database.run('INSERT INTO users (user_name, password) VALUES (?, ?)', [request.body.user_name, request.body.password])
             .then(() => {
                 response.send()
             })
-    }) 
+    })
 })
 
 app.listen(3000)
