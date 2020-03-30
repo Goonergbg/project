@@ -13,6 +13,11 @@ app.use(cors())
 let database
 
 sqlite.open('databas.sqlite').then(database_ => {
+
+    database_.run(
+        'CREATE TABLE IF NOT EXISTS sessions (token TEXT, user_name TEXT)'
+    )
+
     database = database_
 })
 
@@ -49,6 +54,31 @@ app.post('/register', (request, response) => {
             response.send()
         })
 
+})
+
+app.post('/login', (request, response) => {
+    console.log(request.body)
+    database
+        .all('SELECT 1 FROM users WHERE user_name=? AND password=?', [
+            request.body.user_name,
+            request.body.password
+        ])
+        .then(rows => {
+            console.log(rows)
+            if (rows.length === 1) {
+                const token = uuidv4()
+                database.run('INSERT INTO sessions VALUES (?, ?)', [
+                    token,
+                    request.body.user_name
+                ])
+                // response.set('Set-Cookie', `token=${token}`)
+                response.status(201).send({
+                    token: token
+                })
+            } else {
+                response.status(401).send()
+            }
+        })
 })
 
 app.listen(3000)

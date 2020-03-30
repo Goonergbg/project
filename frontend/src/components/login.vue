@@ -1,27 +1,21 @@
 <template>
-<div>
- 
-<form @submit="login">
-
-    <div class="container">
-    <label>
+  <div>
+    <form @submit="login">
+      <div class="container">
+        <label>
           Username
-           <i class="fas fa-user"></i>
+          <i class="fas fa-user"></i>
         </label>
-  <input class="input" type="text" placeholder="username" v-model="userName" />
-  <label>
+        <input class="input" type="text" placeholder="username" v-model="userName" />
+        <label>
           Password
-           <i class="fas fa-lock"></i>
+          <i class="fas fa-lock"></i>
         </label>
-  <input class="input" type="text" placeholder="password" v-model="passWord" />
-  <input class="button" type="submit" value="Log In" />
-
-
-</div>
-</form>
-
-
-</div>   
+        <input class="input" type="text" placeholder="password" v-model="passWord" />
+        <input class="button" type="submit" value="Log In" />
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -29,29 +23,30 @@ export default {
   name: "login",
   data() {
     return {
-      userName: '',
-      passWord: '',
+      userName: "",
+      passWord: ""
     };
   },
 
   methods: {
-    login() {     
+    login() {
       fetch("http://localhost:3000/login/", {
-         body: JSON.stringify({
+        body: JSON.stringify({
           user_name: this.userName,
           password: this.passWord
         }),
+        headers: {
+          "Content-Type": "application/json"
+        },
         method: "POST"
       })
-    
-      .then(response => response)
-      .then(result => {
-        console.log(result)
-      })
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+        });
     }
   }
-    
-}
+};
 </script>
 
 <style scoped>
