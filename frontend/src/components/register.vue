@@ -1,39 +1,39 @@
 <template>
-<div>
- <div v-if="!submitRegister">   
-<form @submit="register">
+  <div>
+    <div v-if="!submitRegister">
+      <form @submit="register">
+        <div class="container">
+          <label>
+            Create username
+            <i class="fas fa-user"></i>
+          </label>
+          <input class="input" type="text" placeholder="Create username" v-model="userName" />
+          <label>
+            Create password
+            <i class="fas fa-lock"></i>
+          </label>
+          <input class="input" type="text" placeholder="Create password" v-model="passWord" />
+          <input class="button" type="submit" value="Register" />
 
-    <div class="container">
-    <label>
-          Create username
-           <i class="fas fa-user"></i>
-        </label>
-  <input class="input" type="text" placeholder="Create username" v-model="userName" />
-  <label>
-          Create password
-           <i class="fas fa-lock"></i>
-        </label>
-  <input class="input" type="text" placeholder="Create password" v-model="passWord" />
-  <input class="button" type="submit" value="Register" />
-
-  <div v-if="errors.length">
-        <ul class="list-disc">
-          <li style="text-align:center;" v-for="error in errors" :key="error">{{ error }}</li>
-        </ul>
-      </div>
-
-</div>
-</form>
- </div>    
-
-<div class="container">
-      <div class="submitResult">
-        <div v-if="submitRegister">Your account has been sucessfully created <br>
-          Your username: {{userName}}</div>
-      </div>
+          <div v-if="errors.length">
+            <ul class="list-disc">
+              <li style="text-align:center;" v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+          </div>
+        </div>
+      </form>
     </div>
 
-</div>   
+    <div class="container">
+      <div class="submitResult">
+        <div v-if="submitRegister">
+          Your account has been sucessfully created
+          <br />
+          Your username: {{userName}}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -41,8 +41,8 @@ export default {
   name: "register",
   data() {
     return {
-      userName: '',
-      passWord: '',
+      userName: "",
+      passWord: "",
       errors: [],
       submitRegister: false
     };
@@ -50,26 +50,25 @@ export default {
 
   methods: {
     register() {
-     if (this.userName && this.passWord) {     
-      fetch("http://localhost:3000/register/", {
-        body: JSON.stringify({
-          user_name: this.userName,
-          password: this.passWord
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      });
-      return this.submitRegister = true
-    }
-    this.errors = [];
+      if (this.userName && this.passWord) {
+        fetch("http://localhost:3000/register/", {
+          body: JSON.stringify({
+            user_name: this.userName,
+            password: this.passWord
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "POST"
+        });
+        return (this.submitRegister = true);
+      }
+      this.errors = [];
       if (!this.userName) this.errors.push("Username required");
       if (!this.passWord) this.errors.push("Password required");
     }
   }
-    
-}
+};
 </script>
 
 <style scoped>
