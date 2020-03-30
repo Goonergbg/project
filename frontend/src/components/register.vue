@@ -12,7 +12,9 @@
             Create password
             <i class="fas fa-lock"></i>
           </label>
+
           <input class="input" type="password" placeholder="Create password" v-model="passWord" />
+
           <input class="button" type="submit" value="Register" />
 
           <div v-if="errors.length">

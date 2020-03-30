@@ -13,7 +13,7 @@
         <button @click="ForumFetch" type="submit" class="forumButton">Submit</button>
       </div>
 
-      <div class="commentbox" v-for="info in info" :key="info.id">
+      <div class="postBox" v-for="info in info" :key="info.id">
         <div class="calendarIcon">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
@@ -33,9 +33,24 @@
         <div v-if="info.id === selectedPost" class="form" id="commentField">
           <div class="form-group">
             <label for="post">Comment:</label>
-            <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
+            <textarea class="form-control" rows="5" id="post" v-model="userComment"></textarea>
           </div>
-          <button type="submit" class="commentButton">Post comment</button>
+          <button @click="postComment" type="submit" class="commentButton">Post comment</button>
+        </div>
+
+        <!-- Comments -->
+        <div class="commentBox" v-if="info.id === selectedPost && createdComment">
+          <div class="calendarIcon">
+            <i class="fas fa-calendar-alt"></i>
+            {{ info.date }}
+          </div>
+          <div class="username">
+            <i class="fas fa-user"></i>
+            {{ info.name }}
+          </div>
+          <div class="comment">
+            <p>{{ info.comment }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +116,7 @@
   margin-bottom: 30px;
 }
 
-.commentbox {
+.postBox {
   background-color: rgb(238, 238, 238);
   width: 50%;
   border-radius: 20px;
@@ -110,9 +125,16 @@
   margin: 5px;
 }
 
-.comment {
-  padding-top: 20px;
+.commentBox {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 20px 5px 20px;
+  margin-bottom: 10px;
 }
+
+/* .comment {
+  padding-top: 20px;
+} */
 
 .username {
   font-size: 20px;
@@ -139,8 +161,9 @@ export default {
       userPost: "",
       userName: "",
       info: null,
-      createComment: false,
-      selectedPost: null
+      selectedPost: null,
+      userComment: "",
+      createdComment: false
     };
   },
 
@@ -150,6 +173,7 @@ export default {
         body: JSON.stringify({
           name: this.userName,
           post: this.userPost
+          // comment: this.userComment
         }),
         headers: {
           "Content-Type": "application/json"
@@ -161,8 +185,22 @@ export default {
       }, 100); // Laddar om sidan efter 0.1 sekund
     },
     commentField(id) {
-      this.createComment = true;
       this.selectedPost = id;
+    },
+    postComment() {
+      fetch("http://localhost:3000/", {
+        body: JSON.stringify({
+          comment: this.userComment
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
+      setTimeout(() => {
+        location.reload();
+      }, 100); // Laddar om sidan efter 0.1 sekund
+      this.createdComment = true;
     }
   }
 };
