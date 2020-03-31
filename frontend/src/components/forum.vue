@@ -14,6 +14,7 @@
       </div>
 
       <div class="postBox" v-for="info in info" :key="info.id">
+        
         <div class="calendarIcon">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
@@ -29,34 +30,120 @@
           </p>
         </div>
 
+        
+       <div v-for="comment in commentsInfo" :key="comment.id">
+        
+        <!-- Comments -->
+        <div class="commentBox">
+          Svar:
+          <div class="calendarIcon">
+            <i class="fas fa-calendar-alt"></i>
+            {{ comment.date }}
+          </div>
+          <div class="username">
+            <i class="fas fa-user"></i>
+            {{ comment.name }}
+          </div>
+          <div class="comment">
+            <p>{{ comment.comment }}</p>
+          </div>
+          
+        </div>
+       
+      </div>
+        
+        
+        
+
         <!-- Comment-field that shows when user clicks on comment-button -->
+        
         <div v-if="info.id === selectedPost" class="form" id="commentField">
+          
           <div class="form-group">
+            <label for="form-name">Name:</label>
+        <input type="text" class="form-control" v-model="commentName" />
             <label for="post">Comment:</label>
             <textarea class="form-control" rows="5" id="post" v-model="userComment"></textarea>
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
-        </div>
+        
 
-        <!-- Comments -->
-        <div class="commentBox" v-if="info.id === selectedPost && createdComment">
-          <div class="calendarIcon">
-            <i class="fas fa-calendar-alt"></i>
-            {{ info.date }}
-          </div>
-          <div class="username">
-            <i class="fas fa-user"></i>
-            {{ info.name }}
-          </div>
-          <div class="comment">
-            <p>{{ info.comment }}</p>
-          </div>
-        </div>
+        
+
+      </div>
       </div>
     </div>
   </div>
 </template>
 
+
+<script>
+export default {
+  name: "forum",
+  created() {
+    fetch("http://localhost:3000/")
+      .then(response => response.json())
+      .then(result => {
+        this.info = result.forum;
+      }),
+      fetch("http://localhost:3000/comment")
+      .then(response => response.json())
+      .then(res => {
+        this.commentsInfo = res;
+      });
+  },
+  data() {
+    return {
+      userPost: "",
+      userName: "",
+      commentName: '',
+      info: null,
+      selectedPost: null,
+      userComment: "",
+      createdComment: false,
+      commentsInfo: ""
+    };
+  },
+
+  methods: {
+    ForumFetch() {
+      fetch("http://localhost:3000/", {
+        body: JSON.stringify({
+          name: this.userName,
+          post: this.userPost
+          // comment: this.userComment
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
+      setTimeout(() => {
+        location.reload();
+      }, 100); // Laddar om sidan efter 0.1 sekund
+    },
+    commentField(id) {
+      this.selectedPost = id;
+    },
+    postComment() {
+      fetch("http://localhost:3000/comment", {
+        body: JSON.stringify({
+          name: this.commentName,
+          comment: this.userComment
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
+      setTimeout(() => {
+        location.reload();
+      }, 100); // Laddar om sidan efter 0.1 sekund
+      this.createdComment = true;
+    }
+  }
+};
+</script>
 
 
 <style scoped>
@@ -144,64 +231,3 @@
   border-radius: 30px;
 }
 </style>
-
-
-<script>
-export default {
-  name: "forum",
-  created() {
-    fetch("http://localhost:3000/")
-      .then(response => response.json())
-      .then(result => {
-        this.info = result.forum;
-      });
-  },
-  data() {
-    return {
-      userPost: "",
-      userName: "",
-      info: null,
-      selectedPost: null,
-      userComment: "",
-      createdComment: false
-    };
-  },
-
-  methods: {
-    ForumFetch() {
-      fetch("http://localhost:3000/", {
-        body: JSON.stringify({
-          name: this.userName,
-          post: this.userPost
-          // comment: this.userComment
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      });
-      setTimeout(() => {
-        location.reload();
-      }, 100); // Laddar om sidan efter 0.1 sekund
-    },
-    commentField(id) {
-      this.selectedPost = id;
-    },
-    postComment() {
-      fetch("http://localhost:3000/", {
-        body: JSON.stringify({
-          comment: this.userComment
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      });
-      setTimeout(() => {
-        location.reload();
-      }, 100); // Laddar om sidan efter 0.1 sekund
-      this.createdComment = true;
-    }
-  }
-};
-</script>

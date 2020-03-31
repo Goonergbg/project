@@ -40,9 +40,23 @@ app.get('/', (request, response) => {
     })
 })
 
+app.get('/comment', (request, response) => {
+            database.all('SELECT * FROM comments order by id DESC').then(comment => {
+            response.send(comment)
+  })
+  })
+
+  app.post('/comment', (request, response) => {
+      const date1 = moment().format('YYYY-MM-DD')
+      database.run('INSERT INTO comments (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date1])
+          .then(() => {
+              response.send()
+          })
+  })
+
 app.post('/', (request, response) => {
     const date = moment().format('YYYY-MM-DD')
-    database.run('INSERT INTO forum_table (name, post, comment, date) VALUES (?, ?, ?, ?)', [request.body.name, request.body.post, request.body.comment, date])
+    database.run('INSERT INTO forum_table (name, post, date, comment) VALUES (?, ?, ?, ?)', [request.body.name, request.body.post, date, request.body.comment])
         .then(() => {
             response.send()
         })
