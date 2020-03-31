@@ -41,18 +41,18 @@ app.get('/', (request, response) => {
 })
 
 app.get('/comment', (request, response) => {
-            database.all('SELECT * FROM comments order by id DESC').then(comment => {
-            response.send(comment)
-  })
-  })
+    database.all('SELECT * FROM comments order by id DESC').then(comment => {
+        response.send(comment)
+    })
+})
 
-  app.post('/comment', (request, response) => {
-      const date1 = moment().format('YYYY-MM-DD')
-      database.run('INSERT INTO comments (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date1])
-          .then(() => {
-              response.send()
-          })
-  })
+app.post('/comment', (request, response) => {
+    const date1 = moment().format('YYYY-MM-DD')
+    database.run('INSERT INTO comments (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date1])
+        .then(() => {
+            response.send()
+        })
+})
 
 app.post('/', (request, response) => {
     const date = moment().format('YYYY-MM-DD')
@@ -86,12 +86,25 @@ app.post('/login', (request, response) => {
                     request.body.user_name
                 ])
                 // response.set('Set-Cookie', `token=${token}`)
+
                 response.status(201).send({
                     token: token
                 })
+                // this.$state.success
             } else {
                 response.status(401).send()
             }
+        })
+})
+
+app.post('/logout', (request, response) => {
+    database
+        .all('DELETE FROM sessions WHERE user_name=?', [request.user_name])
+        .then(() => {
+            response.set(
+                'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+            )
+            response.status(200).send()
         })
 })
 

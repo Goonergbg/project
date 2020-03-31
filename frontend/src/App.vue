@@ -38,11 +38,13 @@
           <li class="nav-item">
             <router-link to="/login" class="nav-link">Log in</router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/logout" class="nav-link" @click="logout">Log out</router-link>
+          </li>
         </ul>
       </div>
     </nav>
     <router-view />
-    
 
     <button @click="topFunction" title="Go to top" :style="display" class="myBtn">
       <i class="fas fa-arrow-up"></i>
@@ -138,6 +140,15 @@ export default {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
+    //   logout() {
+    //     fetch("http://localhost:3000/logout/", {
+    //       method: "DELETE"
+    //         .then(response => response.json())
+    //         .then(result => {
+    //           this.$router.push("/login");
+    //         })
+    //     });
+    //   }
   },
 
   created() {
