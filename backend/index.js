@@ -47,9 +47,23 @@ app.get('/', (request, response) => {
     })
 })
 
+app.get('/comment', (request, response) => {
+    database.all('SELECT * FROM comments order by id DESC').then(comment => {
+        response.send(comment)
+    })
+})
+
+let date = moment().format('YYYY-MM-DD')
+app.post('/comment', (request, response) => {
+    database.run('INSERT INTO comments (name, comment, date, postId) VALUES (?, ?, ?, ?)', [request.body.name, request.body.comment, date, request.body.postId])
+        .then(() => {
+            response.send()
+        })
+})
+
+
 app.post('/', (request, response) => {
-    const date = moment().format('YYYY-MM-DD')
-    database.run('INSERT INTO forum_table (name, post, comment, date) VALUES (?, ?, ?, ?)', [request.body.name, request.body.post, request.body.comment, date])
+    database.run('INSERT INTO forum_table (name, post, date) VALUES (?, ?, ?)', [request.body.name, request.body.post, date])
         .then(() => {
             response.send()
         })
@@ -79,34 +93,16 @@ app.post('/login', (request, response) => {
                     request.body.user_name
                 ])
                 // response.set('Set-Cookie', `token=${token}`)
+
                 response.status(201).send({
                     token: token
                 })
+                // this.$state.success
             } else {
                 response.status(401).send()
             }
         })
 })
 
-function authenticate(request, response, next) {
-    const cookie = request.get('Cookie')
-    if (cookie) {
-        database
-            .all(
-                'SELECT user_name FROM sessions WHERE token=?',
-                /token=([0-9a-f-]*)/.exec(cookie)[1]
-            )
-            .then(rows => {
-                if (rows.length === 1) {
-                    request.userName = rows[0].user_name
-                    next()
-                } else {
-                    response.status(401).send()
-                }
-            })
-    } else {
-        response.status(401).send()
-    }
-}
 
 app.listen(3000)
