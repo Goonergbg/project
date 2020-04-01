@@ -3,19 +3,19 @@
     <div class="bigform">
       <div class="form">
         <label for="form-name">Name:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" v-model="userName" />
+        <input type="text" class="form-control" v-model="userName" />
 
         <div class="form-group">
           <label for="post">Post:</label>
           <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
         </div>
 
-        <button @click="ForumFetch" type="submit" class="forumButton">Submit</button>
+        <button @click="ForumFetch" type="submit" class="forumButton">Send</button>
       </div>
 
       <div class="postBox" v-for="info in info" :key="info.id">
         
-        <div class="calendarIcon">
+        <div class="date">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
         </div>
@@ -32,10 +32,10 @@
 
         
        <div v-for="comment in commentsInfo" :key="comment.id">
-        
+         <div v-if="info.id === comment.postId">
         <!-- Comments -->
         <div class="commentBox">
-          Svar:
+          <p>Reply:</p>
           <div class="calendarIcon">
             <i class="fas fa-calendar-alt"></i>
             {{ comment.date }}
@@ -47,7 +47,7 @@
           <div class="comment">
             <p>{{ comment.comment }}</p>
           </div>
-          
+        </div>
         </div>
        
       </div>
@@ -60,10 +60,13 @@
         <div v-if="info.id === selectedPost" class="form" id="commentField">
           
           <div class="form-group">
+            <p><strong>Write a reply to this post</strong></p>
             <label for="form-name">Name:</label>
-        <input type="text" class="form-control" v-model="commentName" />
+        <input type="text" class="form-control" v-model="commentName" placeholder="Your name" />
             <label for="post">Comment:</label>
-            <textarea class="form-control" rows="5" id="post" v-model="userComment"></textarea>
+            <textarea class="form-control" rows="5" id="post" v-model="userComment" placeholder="Write your reply here"></textarea>
+            <label for="form-name">ID: {{info.id}}</label>
+        <input type="number" class="form-control" v-model="postId" placeholder="Write in the id-number above" />
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
         
@@ -101,7 +104,8 @@ export default {
       selectedPost: null,
       userComment: "",
       createdComment: false,
-      commentsInfo: ""
+      commentsInfo: "",
+      postId: ''
     };
   },
 
@@ -129,7 +133,8 @@ export default {
       fetch("http://localhost:3000/comment", {
         body: JSON.stringify({
           name: this.commentName,
-          comment: this.userComment
+          comment: this.userComment,
+          postId: this.postId
         }),
         headers: {
           "Content-Type": "application/json"
@@ -147,6 +152,9 @@ export default {
 
 
 <style scoped>
+label {
+  margin: 10px
+}
 .commentIcon {
   text-align: right;
   margin-top: 8px;
@@ -154,7 +162,16 @@ export default {
 
 .calendarIcon {
   text-align: right;
-  margin-top: 8px;
+  position: absolute;
+  top: 22px;
+  right: 16px;
+}
+
+.date {
+  text-align: right;
+  position: absolute;
+  top: 22px;
+  right: 16px;
 }
 
 .forumButton {
@@ -166,7 +183,7 @@ export default {
 }
 
 .forumButton:hover {
-  background-color: #888888;
+  background-color: #ff9900;
 }
 
 #commentField {
@@ -210,6 +227,7 @@ export default {
   padding: 20px 20px 5px 20px;
   box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
   margin: 5px;
+  position: relative;
 }
 
 .commentBox {
@@ -217,6 +235,7 @@ export default {
   border-radius: 10px;
   padding: 20px 20px 5px 20px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 /* .comment {

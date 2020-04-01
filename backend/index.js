@@ -46,17 +46,16 @@ app.get('/comment', (request, response) => {
   })
   })
 
+let date = moment().format('YYYY-MM-DD')
   app.post('/comment', (request, response) => {
-      const date1 = moment().format('YYYY-MM-DD')
-      database.run('INSERT INTO comments (name, comment, date) VALUES (?, ?, ?)', [request.body.name, request.body.comment, date1])
+      database.run('INSERT INTO comments (name, comment, date, postId) VALUES (?, ?, ?, ?)', [request.body.name, request.body.comment, date, request.body.postId])
           .then(() => {
               response.send()
           })
   })
 
 app.post('/', (request, response) => {
-    const date = moment().format('YYYY-MM-DD')
-    database.run('INSERT INTO forum_table (name, post, date, comment) VALUES (?, ?, ?, ?)', [request.body.name, request.body.post, date, request.body.comment])
+    database.run('INSERT INTO forum_table (name, post, date) VALUES (?, ?, ?)', [request.body.name, request.body.post, date])
         .then(() => {
             response.send()
         })
