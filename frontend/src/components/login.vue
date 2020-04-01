@@ -42,7 +42,7 @@ export default {
       })
         .then(response => response.json())
         .then(result => {
-          this.$router.push("/");
+          console.log(result)
         });
     }
   }
