@@ -1,6 +1,7 @@
 <template>
   <div id="App">
     <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
+      <!-- <nav class="navbar navbar-expand-lg" style="background-color: #455a64;"> -->
       <div class="logo">
         <img src="logo.png" alt="Logo" />
       </div>
@@ -16,7 +17,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -31,15 +32,6 @@
           </li>
           <li class="nav-item">
             <router-link to="/forum" class="nav-link">Forum</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/register" class="nav-link">Register</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/login" class="nav-link">Log in</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/logout" class="nav-link" @click="logout">Log out</router-link>
           </li>
         </ul>
       </div>
@@ -91,7 +83,7 @@
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <img src="logo.png" alt="Football" />
+            <img id="logo-footer" src="logo.png" alt="Football" />
           </div>
         </div>
         <hr />
@@ -108,15 +100,8 @@
 </template>
 
 <script>
-// import headercontent from "./components/headercontent.vue";
-// import News from "./views/Home.vue";
-
 export default {
   name: "App",
-  components: {
-    // headercontent,
-    // News
-  },
 
   data() {
     return {
@@ -180,6 +165,10 @@ export default {
 
 .nav-item {
   margin-right: 10px;
+}
+
+.nav-link {
+  color: #000;
 }
 
 .myBtn {
@@ -268,6 +257,40 @@ export default {
 @media (max-width: 767px) {
   .site-footer .copyright-text {
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    margin: auto;
+  }
+
+  #navbarNav {
+    text-align: center;
+  }
+  .nav-link {
+    color: #fff !important;
+  }
+
+  i.fas.fa-bars {
+    color: white;
+    padding: 1px;
+  }
+
+  .navbar {
+    background-color: #455a64 !important;
+  }
+
+  .site-footer {
+    text-align: center;
+  }
+
+  #logo-footer {
+    margin: auto;
   }
 }
 </style>
