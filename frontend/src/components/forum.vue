@@ -14,7 +14,6 @@
       </div>
 
       <div class="postBox" v-for="info in info" :key="info.id">
-        
         <div class="calendarIcon">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
@@ -30,47 +29,35 @@
           </p>
         </div>
 
-        
-       <div v-for="comment in commentsInfo" :key="comment.id">
-        
-        <!-- Comments -->
-        <div class="commentBox">
-          Svar:
-          <div class="calendarIcon">
-            <i class="fas fa-calendar-alt"></i>
-            {{ comment.date }}
+        <div v-for="comment in commentsInfo" :key="comment.id">
+          <!-- Comments -->
+          <div class="commentBox">
+            Svar:
+            <div class="calendarIcon">
+              <i class="fas fa-calendar-alt"></i>
+              {{ comment.date }}
+            </div>
+            <div class="username">
+              <i class="fas fa-user"></i>
+              {{ comment.name }}
+            </div>
+            <div class="comment">
+              <p>{{ comment.comment }}</p>
+            </div>
           </div>
-          <div class="username">
-            <i class="fas fa-user"></i>
-            {{ comment.name }}
-          </div>
-          <div class="comment">
-            <p>{{ comment.comment }}</p>
-          </div>
-          
         </div>
-       
-      </div>
-        
-        
-        
 
         <!-- Comment-field that shows when user clicks on comment-button -->
-        
+
         <div v-if="info.id === selectedPost" class="form" id="commentField">
-          
           <div class="form-group">
             <label for="form-name">Name:</label>
-        <input type="text" class="form-control" v-model="commentName" />
+            <input type="text" class="form-control" v-model="commentName" />
             <label for="post">Comment:</label>
             <textarea class="form-control" rows="5" id="post" v-model="userComment"></textarea>
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
-        
-
-        
-
-      </div>
+        </div>
       </div>
     </div>
   </div>
@@ -87,16 +74,16 @@ export default {
         this.info = result.forum;
       }),
       fetch("http://localhost:3000/comment")
-      .then(response => response.json())
-      .then(res => {
-        this.commentsInfo = res;
-      });
+        .then(response => response.json())
+        .then(res => {
+          this.commentsInfo = res;
+        });
   },
   data() {
     return {
       userPost: "",
       userName: "",
-      commentName: '',
+      commentName: "",
       info: null,
       selectedPost: null,
       userComment: "",
