@@ -241,4 +241,23 @@ label {
 .btn.btn-primary {
   border-radius: 30px;
 }
+
+@media (max-width: 767px) {
+  .form {
+  width: 90%;
+  background-color: rgb(238, 238, 238);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  }
+  .postBox {
+  background-color: rgb(238, 238, 238);
+  width: 90%;
+  border-radius: 20px;
+  padding: 20px 20px 5px 20px;
+  box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
+  margin: 5px;
+  position: relative;
+}
+}
 </style>
