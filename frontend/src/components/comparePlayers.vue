@@ -24,7 +24,9 @@
     </div>
 
     <!---- Reklam ----->
-    <div class="container">
+    <!-- v-if="!this.$state.token" -->
+
+    <div class="container" v-if="!$store.state.token">
       <div class="row">
         <div class="col">
           <a href="https://www.pepsi.se/">

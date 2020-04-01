@@ -54,6 +54,7 @@ let date = moment().format('YYYY-MM-DD')
           })
   })
 
+
 app.post('/', (request, response) => {
     database.run('INSERT INTO forum_table (name, post, date) VALUES (?, ?, ?)', [request.body.name, request.body.post, date])
         .then(() => {
@@ -85,12 +86,25 @@ app.post('/login', (request, response) => {
                     request.body.user_name
                 ])
                 // response.set('Set-Cookie', `token=${token}`)
+
                 response.status(201).send({
                     token: token
                 })
+                // this.$state.success
             } else {
                 response.status(401).send()
             }
+        })
+})
+
+app.post('/logout', (request, response) => {
+    database
+        .all('DELETE FROM sessions WHERE user_name=?', [request.user_name])
+        .then(() => {
+            response.set(
+                'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+            )
+            response.status(200).send()
         })
 })
 
