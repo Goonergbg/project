@@ -27,21 +27,29 @@
           <a href="https://www.intersport.se/">
             <img src="intersport.jpg" alt="Logo" class="reklambild" />
           </a>
+          <div id="reklamtext">
+            Just nu!
+            <span style="color:#FF0000">25%</span> på all Sportswear! Fram till 23:59 den 25/3 har du 25% rabatt på våra ordinarie-, paket- och Memberpriser.
+          </div>
         </div>
         <div class="col">
           <a href="http://www.stadium.com/">
             <img src="stadium.jpg" alt="Logo" class="reklambild" />
           </a>
+          <div id="reklamtext">
+            25% på alla
+            <span style="color:#FF0000">vårjackor</span> för dam och herr! Gäller ord. pris.
+          </div>
         </div>
         <div class="w-100"></div>
-        <div class="col" id="reklamtext">
+        <!-- <div class="col" id="reklamtext">
           Just nu!
           <span style="color:#FF0000">25%</span> på all Sportswear! Fram till 23:59 den 25/3 har du 25% rabatt på våra ordinarie-, paket- och Memberpriser.
-        </div>
-        <div class="col" id="reklamtext">
+        </div>-->
+        <!-- <div class="col" id="reklamtext">
           25% på alla
           <span style="color:#FF0000">vårjackor</span> för dam och herr! Gäller ord. pris.
-        </div>
+        </div>-->
       </div>
     </div>
     <!---- Reklam slut ----->
@@ -164,5 +172,33 @@ select {
   border-bottom: solid 3px #455a64;
   border-radius: 3px;
   font-family: "Fira Sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .reklambild {
+    height: 200px;
+    width: 90%;
+  }
+
+  #reklamtext {
+    font-size: 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .teams-div {
+    width: 500px;
+  }
+
+  .compare-div {
+    width: 500px;
+  }
+
+  select {
+    font-size: 15px;
+  }
 }
 </style>
