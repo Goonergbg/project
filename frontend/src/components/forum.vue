@@ -4,17 +4,13 @@
       <div class="form">
         <label for="form-name">Name:</label>
         <input type="text" class="form-control" v-model="userName" />
-
         <div class="form-group">
           <label for="post">Post:</label>
           <textarea class="form-control" rows="5" id="post" v-model="userPost"></textarea>
         </div>
-
         <button @click="ForumFetch" type="submit" class="forumButton">Send</button>
       </div>
-
       <div class="postBox" v-for="info in info" :key="info.id">
-        
         <div class="date">
           <i class="fas fa-calendar-alt"></i>
           {{ info.date }}
@@ -29,50 +25,55 @@
             <i class="far fa-comment"></i> Comment
           </p>
         </div>
-
-        
-       <div v-for="comment in commentsInfo" :key="comment.id">
-         <div v-if="info.id === comment.postId">
-        <!-- Comments -->
-        <div class="commentBox">
-          <p>Reply:</p>
-          <div class="calendarIcon">
-            <i class="fas fa-calendar-alt"></i>
-            {{ comment.date }}
-          </div>
-          <div class="username">
-            <i class="fas fa-user"></i>
-            {{ comment.name }}
-          </div>
-          <div class="comment">
-            <p>{{ comment.comment }}</p>
+        <div v-for="comment in commentsInfo" :key="comment.id">
+          <div v-if="info.id === comment.postId">
+            <!-- Comments -->
+            <div class="commentBox">
+              <p>Reply:</p>
+              <div class="calendarIcon">
+                <i class="fas fa-calendar-alt"></i>
+                {{ comment.date }}
+              </div>
+              <div class="username">
+                <i class="fas fa-user"></i>
+                {{ comment.name }}
+              </div>
+              <div class="comment">
+                <p>{{ comment.comment }}</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-        </div>
-
         <!-- Comment-field that shows when user clicks on comment-button -->
-
         <div v-if="info.id === selectedPost" class="form" id="commentField">
           <div class="form-group">
-            <p><strong>Write a reply to this post</strong></p>
+            <p>
+              <strong>Write a reply to this post</strong>
+            </p>
             <label for="form-name">Name:</label>
-        <input type="text" class="form-control" v-model="commentName" placeholder="Your name" />
+            <input type="text" class="form-control" v-model="commentName" placeholder="Your name" />
             <label for="post">Comment:</label>
-            <textarea class="form-control" rows="5" id="post" v-model="userComment" placeholder="Write your reply here"></textarea>
+            <textarea
+              class="form-control"
+              rows="5"
+              id="post"
+              v-model="userComment"
+              placeholder="Write your reply here"
+            ></textarea>
             <label for="form-name">ID: {{info.id}}</label>
-        <input type="number" class="form-control" v-model="postId" placeholder="Write in the id-number above" />
+            <input
+              type="number"
+              class="form-control"
+              v-model="postId"
+              placeholder="Write in the id-number above"
+            />
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
         </div>
-      
+      </div>
     </div>
   </div>
-  </div>
-</template>
-
-
-<script>
+</template><script>
 export default {
   name: "forum",
   created() {
@@ -97,10 +98,9 @@ export default {
       userComment: "",
       createdComment: false,
       commentsInfo: "",
-      postId: ''
+      postId: ""
     };
   },
-
   methods: {
     ForumFetch() {
       fetch("http://localhost:3000/", {
@@ -140,32 +140,26 @@ export default {
     }
   }
 };
-</script>
-
-
-<style scoped>
+</script><style scoped>
 label {
-  margin: 10px
+  margin: 10px;
 }
 .commentIcon {
   text-align: right;
   margin-top: 8px;
 }
-
 .calendarIcon {
   text-align: right;
   position: absolute;
   top: 22px;
   right: 16px;
 }
-
 .date {
   text-align: right;
   position: absolute;
   top: 22px;
   right: 16px;
 }
-
 .forumButton {
   background-color: #455a64;
   font-family: "Fira Sans", sans-serif;
@@ -173,15 +167,12 @@ label {
   padding: 10px 25px;
   color: white;
 }
-
 .forumButton:hover {
   background-color: #ff9900;
 }
-
 #commentField {
   width: 100%;
 }
-
 .commentButton {
   background-color: #455a64;
   font-family: "Fira Sans", sans-serif;
@@ -189,16 +180,13 @@ label {
   padding: 5px 15px;
   color: white;
 }
-
 .commentButton:hover {
   background-color: #ff9900;
 }
-
 #main {
   height: 100%;
   padding-top: 60px;
 }
-
 .bigform {
   display: flex;
   flex-direction: column;
@@ -211,7 +199,6 @@ label {
   border-radius: 20px;
   margin-bottom: 30px;
 }
-
 .postBox {
   background-color: rgb(238, 238, 238);
   width: 50%;
@@ -221,24 +208,38 @@ label {
   margin: 5px;
   position: relative;
 }
-
 .commentBox {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px 20px 5px 20px;
   margin-bottom: 10px;
   position: relative;
-}
-
-/* .comment {
+} /* .comment {
   padding-top: 20px;
 } */
-
 .username {
   font-size: 20px;
 }
-
 .btn.btn-primary {
   border-radius: 30px;
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 90%;
+    background-color: rgb(238, 238, 238);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+  .postBox {
+    background-color: rgb(238, 238, 238);
+    width: 90%;
+    border-radius: 20px;
+    padding: 20px 20px 5px 20px;
+    box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
+    margin: 5px;
+    position: relative;
+  }
 }
 </style>

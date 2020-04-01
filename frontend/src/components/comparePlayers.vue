@@ -24,28 +24,33 @@
     </div>
 
     <!---- Reklam ----->
-    <!-- v-if="!this.$state.token" -->
-
     <div class="container" v-if="!$store.state.token">
       <div class="row">
         <div class="col">
           <a href="https://www.pepsi.se/">
             <img src="pepsi.jpg" alt="Logo" class="reklambild" />
           </a>
+          <div id="reklamtext">
+            Släck törsten med Sveriges
+            <span style="color:#FF0000">godaste dryck.</span>
+          </div>
         </div>
         <div class="col">
           <a href="https://www.zalando.se/">
             <img src="zalando.png" alt="Logo" class="reklambild" />
           </a>
+          <div id="reklamtext">
+            <span style="color:#FF0000">MID SEASON SALE:</span> Spara upp till 50% hos Zalando.
+          </div>
         </div>
         <div class="w-100"></div>
-        <div class="col" id="reklamtext">
+        <!-- <div class="col" id="reklamtext">
           Släck törsten med Sveriges
           <span style="color:#FF0000">godaste dryck.</span>
-        </div>
-        <div class="col" id="reklamtext">
+        </div>-->
+        <!-- <div class="col" id="reklamtext">
           <span style="color:#FF0000">MID SEASON SALE:</span> Spara upp till 50% hos Zalando.
-        </div>
+        </div>-->
       </div>
     </div>
     <!---- Reklam slut ----->
@@ -169,6 +174,34 @@ select {
   border-bottom: solid 3px #455a64;
   border-radius: 3px;
   font-family: "Fira Sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .reklambild {
+    height: 200px;
+    width: 90%;
+  }
+
+  #reklamtext {
+    font-size: 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .teams-div {
+    width: 500px;
+  }
+
+  .compare-div {
+    width: 500px;
+  }
+
+  select {
+    font-size: 15px;
+  }
 }
 </style>
 
