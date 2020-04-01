@@ -27,7 +27,6 @@ export default {
       passWord: ""
     };
   },
-
   methods: {
     login() {
       fetch("http://localhost:3000/login/", {
@@ -43,6 +42,7 @@ export default {
         .then(response => response.json())
         .then(result => {
           this.$router.push("/");
+          console.log(result);
         });
     }
   }
