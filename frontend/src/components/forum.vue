@@ -48,7 +48,7 @@
             <p>{{ comment.comment }}</p>
           </div>
         </div>
-
+      </div>
         </div>
 
         <!-- Comment-field that shows when user clicks on comment-button -->
@@ -65,7 +65,7 @@
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
         </div>
-      </div>
+      
     </div>
   </div>
   </div>
