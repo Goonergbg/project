@@ -139,16 +139,14 @@ export default {
     topFunction() {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    },
+    logout() {
+      fetch("http://localhost:3000/logout/", {
+        method: "DELETE"
+          .then(response => response.json())
+          .then(() => this.$router.push("/"))
+      });
     }
-    //   logout() {
-    //     fetch("http://localhost:3000/logout/", {
-    //       method: "DELETE"
-    //         .then(response => response.json())
-    //         .then(result => {
-    //           this.$router.push("/login");
-    //         })
-    //     });
-    //   }
   },
 
   created() {
