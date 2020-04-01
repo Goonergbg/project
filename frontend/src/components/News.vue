@@ -42,7 +42,7 @@
       </div>
 
       <div class="w-100"></div>
-      <div class="col m-3">
+      <div class="col m-3" id="deleted-media-col">
         <img :src="articles[3].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[3].title}}</h2>
         <p class="arttext">{{articles[3].content}}</p>
@@ -53,7 +53,7 @@
         <p class="arttext">{{articles[4].content}}</p>
       </div>
       <div class="w-100"></div>
-      <div class="col m-3">
+      <div class="col m-3" id="deleted-media-col2">
         <img :src="articles[6].urlToImage" class="artbild" />
         <h2 class="arttitle">{{articles[6].title}}</h2>
         <p class="arttext">{{articles[6].content}}</p>
@@ -338,5 +338,45 @@ export default {
   font-size: 26px;
   color: rgba(0, 0, 0, 0.842);
   text-shadow: 2px 2px 3px rgba(82, 82, 82, 0.068);
+}
+@media (max-width: 376px) {
+  .artbildbig {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+  }
+  .arttitlebig {
+    font-size: 20px;
+  }
+  .arttextbig {
+    font-size: 15px;
+  }
+  .col-bild-sec {
+    float: none;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+  }
+  .col-title-sec {
+    padding: 0em;
+    margin-top: 10px;
+  }
+  .col1 {
+    height: auto;
+    padding: 1em;
+  }
+  .col-text-sec {
+    padding: 0;
+  }
+  #deleted-media-col {
+    display: none;
+  }
+  #deleted-media-col2 {
+    display: none;
+  }
+  .artbild {
+    width: 100%;
+    height: 50%;
+  }
 }
 </style>
