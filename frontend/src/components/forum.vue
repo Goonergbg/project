@@ -48,17 +48,12 @@
             <p>{{ comment.comment }}</p>
           </div>
         </div>
+
         </div>
-       
-      </div>
-        
-        
-        
 
         <!-- Comment-field that shows when user clicks on comment-button -->
-        
+
         <div v-if="info.id === selectedPost" class="form" id="commentField">
-          
           <div class="form-group">
             <p><strong>Write a reply to this post</strong></p>
             <label for="form-name">Name:</label>
@@ -69,11 +64,7 @@
         <input type="number" class="form-control" v-model="postId" placeholder="Write in the id-number above" />
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
-        
-
-        
-
-      </div>
+        </div>
       </div>
     </div>
   </div>
@@ -90,16 +81,16 @@ export default {
         this.info = result.forum;
       }),
       fetch("http://localhost:3000/comment")
-      .then(response => response.json())
-      .then(res => {
-        this.commentsInfo = res;
-      });
+        .then(response => response.json())
+        .then(res => {
+          this.commentsInfo = res;
+        });
   },
   data() {
     return {
       userPost: "",
       userName: "",
-      commentName: '',
+      commentName: "",
       info: null,
       selectedPost: null,
       userComment: "",
