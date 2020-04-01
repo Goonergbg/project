@@ -207,6 +207,7 @@ label {
   box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
   margin: 5px;
   position: relative;
+  margin-bottom: 20px;
 }
 .commentBox {
   background-color: #fff;
@@ -238,7 +239,7 @@ label {
     border-radius: 20px;
     padding: 20px 20px 5px 20px;
     box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
-    margin: 5px;
+    margin-bottom: 20px;
     position: relative;
   }
 }
