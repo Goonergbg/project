@@ -22,13 +22,15 @@
 
           <div class="col-md-6" id="overflow">
             <h4 class="livescore-title">LIVE TABLE</h4>
-
             <div class="nextprevbuttons">
-              <button class="buttontable" @click="component = 'firsttable' ">
-                <i class="fas fa-chevron-left"></i>
+              <button class="BUTTON_VMF" @click="component = 'firsttable' ">
+                <p>La Liga</p>
               </button>
-              <button class="buttontable2" @click="component = 'secondtable' ">
-                <i class="fas fa-chevron-right"></i>
+              <button class="BUTTON_VMF" @click="component = 'secondtable'">
+                <p>Premier League</p>
+              </button>
+              <button class="BUTTON_VMF" @click="component = 'thirdtable'">
+                <p>Serie A</p>
               </button>
             </div>
 
@@ -72,9 +74,6 @@ import thirdtable from "./thirdtable.vue";
 
 export default {
   name: "News",
-  props: {
-    msg: String
-  },
   components: {
     firsttable,
     secondtable,
@@ -110,46 +109,42 @@ export default {
   text-align: center;
   margin-bottom: 7px;
 }
-.buttontable {
-  background-color: #ff9900;
-  border-radius: 42px;
+.BUTTON_VMF {
+  background: #ff9900;
+  background-image: -webkit-linear-gradient(top, #ff9900, #ff9900);
+  background-image: -moz-linear-gradient(top, #ff9900, #ff9900);
+  background-image: -ms-linear-gradient(top, #ff9900, #ff9900);
+  background-image: -o-linear-gradient(top, #ff9900, #ff9900);
+  background-image: linear-gradient(to bottom, #ff9900, #ff9900);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 7px;
+  text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 4px 14px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
-}
-.buttontable2 {
-  background-color: #ff9900;
-  border-radius: 42px;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 4px 14px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
-  margin-left: 2px;
-}
-.buttontable:hover {
-  background-color: #426675;
-}
-.buttontable:active {
-  position: relative;
-  top: 1px;
-}
-.buttontable2:hover {
-  background-color: #426675;
-}
-.buttontable2:active {
-  position: relative;
-  top: 1px;
+  text-align: center;
+  margin-right: 5px;
+  height: 2.5em;
+  text-decoration-style: solid;
+  font-family: "Fira Sans", sans-serif;
 }
 
+.BUTTON_VMF:hover {
+  border: solid rgba(255, 255, 255, 0) 1px;
+  background: #455a64;
+  background-image: -webkit-linear-gradient(top, #455a64, #455a64);
+  background-image: -moz-linear-gradient(top, #455a64, #455a64);
+  background-image: -ms-linear-gradient(top, #455a64, #455a64);
+  background-image: -o-linear-gradient(top, #455a64, #455a64);
+  background-image: linear-gradient(to bottom, #455a64, #455a64);
+
+  text-decoration: none;
+  height: 2.5em;
+}
 #overflow {
   overflow: auto;
   max-height: 26.7em;
