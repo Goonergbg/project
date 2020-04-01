@@ -27,7 +27,7 @@
           <a href="https://www.intersport.se/">
             <img src="intersport.jpg" alt="Logo" class="reklambild" />
           </a>
-          <div id="reklamtext">
+          <div class="reklamtext">
             Just nu!
             <span style="color:#FF0000">25%</span> på all Sportswear! Fram till 23:59 den 25/3 har du 25% rabatt på våra ordinarie-, paket- och Memberpriser.
           </div>
@@ -36,7 +36,7 @@
           <a href="http://www.stadium.com/">
             <img src="stadium.jpg" alt="Logo" class="reklambild" />
           </a>
-          <div id="reklamtext">
+          <div class="reklamtext">
             25% på alla
             <span style="color:#FF0000">vårjackor</span> för dam och herr! Gäller ord. pris.
           </div>
@@ -94,7 +94,7 @@ export default {
   margin-top: 50px;
 }
 
-#reklamtext {
+.reklamtext {
   font-size: 18px;
   text-align: center;
   padding-bottom: 60px;
@@ -108,12 +108,10 @@ export default {
 }
 
 .main {
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
   margin-top: 100px;
   font-family: "Fira Sans", sans-serif;
 }
@@ -180,13 +178,12 @@ select {
     width: 90%;
   }
 
-  #reklamtext {
+  .reklamtext {
     font-size: 15px;
   }
 
   .row {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   .teams-div {
@@ -199,6 +196,10 @@ select {
 
   select {
     font-size: 15px;
+  }
+
+  .main {
+    margin-top: 30px;
   }
 }
 </style>

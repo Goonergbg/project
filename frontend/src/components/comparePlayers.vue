@@ -30,7 +30,7 @@
           <a href="https://www.pepsi.se/">
             <img src="pepsi.jpg" alt="Logo" class="reklambild" />
           </a>
-          <div id="reklamtext">
+          <div class="reklamtext">
             Släck törsten med Sveriges
             <span style="color:#FF0000">godaste dryck.</span>
           </div>
@@ -39,7 +39,7 @@
           <a href="https://www.zalando.se/">
             <img src="zalando.png" alt="Logo" class="reklambild" />
           </a>
-          <div id="reklamtext">
+          <div class="reklamtext">
             <span style="color:#FF0000">MID SEASON SALE:</span> Spara upp till 50% hos Zalando.
           </div>
         </div>
@@ -96,7 +96,7 @@ export default {
   margin-top: 50px;
 }
 
-#reklamtext {
+.reklamtext {
   font-size: 18px;
   text-align: center;
   padding-bottom: 60px;
@@ -110,12 +110,10 @@ export default {
 }
 
 .main {
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
   margin-top: 100px;
   font-family: "Fira Sans", sans-serif;
 }
@@ -182,13 +180,12 @@ select {
     width: 90%;
   }
 
-  #reklamtext {
+  .reklamtext {
     font-size: 15px;
   }
 
   .row {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   .teams-div {
@@ -201,6 +198,10 @@ select {
 
   select {
     font-size: 15px;
+  }
+
+  .main {
+    margin-top: 30px;
   }
 }
 </style>
