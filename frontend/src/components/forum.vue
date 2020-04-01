@@ -223,6 +223,7 @@ label {
 .btn.btn-primary {
   border-radius: 30px;
 }
+
 @media (max-width: 767px) {
   .form {
     width: 90%;
