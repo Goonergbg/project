@@ -1,13 +1,15 @@
 <template>
   <div>
+
     <div v-if="!submitFeedback">
     <form @submit="submit">
-      <h3 style="text-align:center;">Share your feedback with us</h3>
+      <h3>Share your feedback with us</h3>
       <div v-if="errors.length">
         <ul class="list-disc">
-          <li style="text-align:center;" v-for="error in errors" :key="error">{{ error }}</li>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
         </ul>
       </div>
+
       <div class="container">
         <label>
           Name
@@ -21,6 +23,7 @@
         <textarea v-model="feedback" />
         <input class="button" type="submit" value="Send feedback" />
       </div>
+
     </form>
     </div>
 
@@ -45,10 +48,19 @@ export default {
   },
   methods: {
     submit() {
-      if (this.name && this.feedback) { return this.submitFeedback = true }
-      this.errors = [];
-      if (!this.name) this.errors.push("Name required");
-      if (!this.feedback) this.errors.push("Feedback required");
+      if (this.name && this.feedback) { 
+        return this.submitFeedback = true 
+        }
+
+      this.errors = []
+
+      if (!this.name) {
+      this.errors.push("Name required")
+      }
+
+      if (!this.feedback) { 
+        this.errors.push("Feedback required")
+      }
     }
   }
 };
@@ -58,6 +70,15 @@ export default {
 .list-disc {
   list-style-type: disc;
 }
+
+h3 {
+  text-align: center;
+}
+
+ul li {
+  text-align: center;
+}
+
 textarea {
   font-size: 20px;
   width: 50%;
