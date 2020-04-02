@@ -145,11 +145,9 @@ thead th {
 
 @media (max-width: 767px) {
   .mainContainer {
-  display: flex;
   flex-direction: column;
   width: 90%;
   height: auto;
-  box-shadow: 0 0 10px 5px rgba(129, 129, 129, 0.089);
 }
 .table-left {
   width: 90%;
