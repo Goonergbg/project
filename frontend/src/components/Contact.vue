@@ -49,7 +49,7 @@ export default {
   methods: {
     submit() {
       if (this.name && this.feedback) { 
-        return this.submitFeedback = true 
+        this.submitFeedback = true 
         }
 
       this.errors = []
