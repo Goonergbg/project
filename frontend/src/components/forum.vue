@@ -60,13 +60,6 @@
               v-model="userComment"
               placeholder="Write your reply here"
             ></textarea>
-            <label for="form-name">ID: {{info.id}}</label>
-            <input
-              type="number"
-              class="form-control"
-              v-model="postId"
-              placeholder="Write in the id-number above"
-            />
           </div>
           <button @click="postComment" type="submit" class="commentButton">Post comment</button>
         </div>
@@ -97,8 +90,7 @@ export default {
       selectedPost: null,
       userComment: "",
       createdComment: false,
-      commentsInfo: "",
-      postId: ""
+      commentsInfo: ""
     };
   },
   methods: {
@@ -125,7 +117,7 @@ export default {
         body: JSON.stringify({
           name: this.commentName,
           comment: this.userComment,
-          postId: this.postId
+          postId: this.selectedPost
         }),
         headers: {
           "Content-Type": "application/json"
@@ -139,7 +131,8 @@ export default {
     }
   }
 };
-</script><style scoped>
+</script>
+<style scoped>
 label {
   margin: 10px;
 }
@@ -227,19 +220,9 @@ label {
 @media (max-width: 767px) {
   .form {
     width: 90%;
-    background-color: rgb(238, 238, 238);
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 30px;
   }
   .postBox {
-    background-color: rgb(238, 238, 238);
     width: 90%;
-    border-radius: 20px;
-    padding: 20px 20px 5px 20px;
-    box-shadow: 1px 1px 10px 4px rgba(138, 138, 138, 0.041);
-    margin-bottom: 20px;
-    position: relative;
   }
 }
 </style>

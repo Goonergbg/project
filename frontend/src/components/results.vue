@@ -155,7 +155,6 @@ thead th {
     width: 90%;
     padding-left: 10px;
   }
-
   .table-right {
     width: 90%;
     padding-left: 10px;
