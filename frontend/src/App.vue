@@ -1,13 +1,12 @@
 <template>
   <div id="App">
     <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
-      <!-- <nav class="navbar navbar-expand-lg" style="background-color: #455a64;"> -->
       <div class="logo">
         <img src="logo.png" alt="Logo" />
       </div>
 
       <span class="navbar-brand"></span>
-      <!--För att hamburger-menyn ska hamna till höger vid mindre skärm-->
+      <!--To place the hamburger-menu at the right side, when smaller screen-->
       <button
         class="navbar-toggler"
         type="button"
@@ -124,13 +123,6 @@ export default {
     topFunction() {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    },
-    logout() {
-      fetch("http://localhost:3000/logout/", {
-        method: "DELETE"
-          .then(response => response.json())
-          .then(() => this.$router.push("/"))
-      });
     }
   },
 

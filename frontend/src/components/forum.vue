@@ -99,7 +99,6 @@ export default {
         body: JSON.stringify({
           name: this.userName,
           post: this.userPost
-          // comment: this.userComment
         }),
         headers: {
           "Content-Type": "application/json"
