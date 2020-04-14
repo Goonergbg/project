@@ -12,7 +12,6 @@
         </select>
       </div>
 
-      <!-- @click="$router.push('/results')" -->
       <div class="compare-div">
         <input @click="compare" type="button" class="button-compare" value="Compare Teams" />
       </div>

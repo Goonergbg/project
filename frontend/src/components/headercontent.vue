@@ -4,9 +4,10 @@
       <div class="container mx-auto">
         <h1 class="headerrubrik">Compare Football Teams and Players</h1>
 
-        <p
-          class="headercontent"
-        >We offer the abilty to compare Football teams and players, our website delivers information such as World Ranking, Stadium, Player Goals, Minutes Played, Goals per Match etc...</p>
+        <p class="headercontent">
+          We offer the abilty to compare Football teams and players, our website delivers
+          information such as World Ranking, Stadium, Player Goals, Minutes Played, Goals per Match etc...
+        </p>
       </div>
     </div>
 
